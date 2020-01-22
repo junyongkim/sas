@@ -69,12 +69,17 @@ proc iml;
 		q=1-cdf("f",g,n0,t0-n0-k);
 		c=a`*diag(1/var(r[,1:n0-&longshort.]))*a;
 		a=mean(abs(a));
-		print (&min1.)[label="T1" format=best8.] (&max1.)[label="T2" format=best8.],,(n0-&longshort.)[label="N" format=best8.] k[label="K" format=best8.],,a[label="MAPE" format=8.4] c[label="CPE" format=8.4],,g[label="GRS" format=8.4] q[label="P" format=pvalue8.4];
+		print (&min1.)[label="T1" format=best8.] (&max1.)[label="T2" format=best8.]
+			,,(n0-&longshort.)[label="N" format=best8.] k[label="K" format=best8.]
+			,,a[label="MAPE" format=8.4] c[label="CPE" format=8.4]
+			,,g[label="GRS" format=8.4] q[label="P" format=pvalue8.4];
 	end;
 	else do;
 		c=b[,1]`*diag(1/var(r))*b[,1];
 		a=mean(abs(b[,1]));
-		print (&min1.)[label="T1" format=best8.] (&max1.)[label="T2" format=best8.],,(&longshort.)[label="N" format=best8.] k[label="K" format=best8.],,a[label="MAPE" format=8.4] a[label="CPE" format=8.4];
+		print (&min1.)[label="T1" format=best8.] (&max1.)[label="T2" format=best8.]
+			,,(&longshort.)[label="N" format=best8.] k[label="K" format=best8.]
+			,,a[label="MAPE" format=8.4] a[label="CPE" format=8.4];
 	end;
 	mattrib b format=8.4 z format=parenthesis. p format=asterisk.;
 	fname="cons"//fname[1:k];
