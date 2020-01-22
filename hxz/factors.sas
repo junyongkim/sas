@@ -2,8 +2,8 @@
 filename h url "&hxz.factors.html";
 
 data factors;
-	infile h length=l;
-	input i $varying32767. l;
+	infile h truncover;
+	input i $32767.;
 	if find(i,"uploads/1");
 	do j=1 to 12;
 		i=substr(i,find(i,"uploads/1",2));
