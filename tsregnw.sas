@@ -62,7 +62,7 @@ proc iml;
 	p=2*cdf("t",-abs(z),t);
 	if n0>&longshort. then do;
 		a=b[1:n0-&longshort.,1];
-		s=e[,1:n0-&longshort.]`*e[,1:n0-&longshort.]/t;
+		s=e[,1:n0-&longshort.]`*e[,1:n0-&longshort.]/t0;
 		m=mean(f)`;
 		o=cov(f)*(t0-1)/t0;
 		g=(t0-n0-&longshort.-k)/(n0-&longshort.)*a`*inv(s)*a/(1+m`*ginv(o)*m);
