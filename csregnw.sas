@@ -152,6 +152,10 @@ proc iml;
 	outest="&outest.";
 	create &outest. from x[colname=z rowname=outest];
 	append from x[rowname=outest];
+	print (&min1.)[label="T1" format=best8.] (&max1.)[label="T1" format=best8.]
+		,,n[label="N" format=best8.] k[label="K" format=best8.]
+		,,am[label="MAPE" format=8.4] an[label="CPE" format=8.4]
+		,,grs[label="GRS" format=8.4] grsp[label="P" format=pvalue8.4];
 quit;
 
 data &outest.;
