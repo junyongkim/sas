@@ -17,7 +17,7 @@ date in portfolio and date in factor must match
 avoid csregsg as macro outside this
 *************************************************/
 
-%macro csregsg(portfolio=,factor=,longshort=,out=,gpath=,imagename=png,gpath2=,imagename2=,imagefmt=);
+%macro csregsg(portfolio=,factor=,longshort=,out=,gpath=,imagename=,gpath2=,imagename2=,imagefmt=png);
 
 proc sql noprint;
 	select date,min(date),max(date) into :dat1 separated by " ",:min1 trimmed,:max1 trimmed from &portfolio. order by date;
