@@ -100,7 +100,7 @@ data &outest.;
 	outest="&outest.";
 	t1=&min1.;
 	t2=&max1.;
-	format rname &fname.;
+	format t1 t2 best8. rname &fname.;
 	merge b0 t0 p0;
 run;
 
