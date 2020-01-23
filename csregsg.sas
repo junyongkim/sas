@@ -12,12 +12,12 @@ gpath is the image location (unless omitted)
 imagename is the image name (unless omitted)
 gpath2 is the gls image location (unless omitted)
 imagename2 is the gls image name (unless omitted)
-imagefmt is the image format (default otherwise)
+imagefmt is the image format (default png)
 date in portfolio and date in factor must match
 avoid csregsg as macro outside this
 *************************************************/
 
-%macro csregsg(portfolio=,factor=,longshort=,out=,gpath=,imagename=,gpath2=,imagename2=,imagefmt=);
+%macro csregsg(portfolio=,factor=,longshort=,out=,gpath=,imagename=png,gpath2=,imagename2=,imagefmt=);
 
 proc sql noprint;
 	select date,min(date),max(date) into :dat1 separated by " ",:min1 trimmed,:max1 trimmed from &portfolio. order by date;
