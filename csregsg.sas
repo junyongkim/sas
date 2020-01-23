@@ -102,6 +102,7 @@ data &out.;
 	out="&out.";
 	t1=&min1.;
 	t2=&max1.;
+	format t1 t2 best8.;
 	set &out.;
 run;
 
