@@ -3,20 +3,22 @@ libname d "!userprofile\desktop\devour\";
 libname d;
 option nodlcreatedir;
 
-filename _ "!userprofile\desktop\devour\stambaugh.sas";
+%let master=https://raw.githubusercontent.com/junyongkim/sascons/master/;
+
+filename _ url "&master.devour/stambaugh.sas";
 %include _;
 
-filename _ "!userprofile\desktop\devour\kroencke.sas";
+filename _ url "&master.devour/kroencke.sas";
 %include _;
 
-filename _ "!userprofile\desktop\devour\shiller.sas";
+filename _ url "&master.devour/shiller.sas";
 %include _;
 
-filename _ "!userprofile\desktop\devour\ritter.sas";
+filename _ url "&master.devour/ritter.sas";
 %include _;
 
-filename _ "!userprofile\desktop\devour\aqr.sas";
+filename _ url "&master.devour/michigan.sas";
 %include _;
 
-filename _ "!userprofile\desktop\devour\michigan.sas";
+filename _ url "&master.devour/aqr.sas";
 %include _;
