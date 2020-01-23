@@ -160,7 +160,7 @@ quit;
 
 data &outest.;
 	set &outest.;
-	format t1 t2 n k 8. t_: z_: parenthesis. p_: asterisk.;
+	format t1 t2 n k best8. t_: z_: parenthesis. p_: asterisk.;
 run;
 
 %put NOTE: Dates commensurate (&min1.-&max1., &min2.-&max2.).;
