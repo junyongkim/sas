@@ -14,3 +14,6 @@ filename _ "!userprofile\desktop\devour\shiller.sas";
 
 filename _ "!userprofile\desktop\devour\ritter.sas";
 %include _;
+
+filename _ "!userprofile\desktop\devour\aqr.sas";
+%include _;
