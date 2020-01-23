@@ -65,7 +65,7 @@ proc iml;
 		s=e[,1:n0-&longshort.]`*e[,1:n0-&longshort.]/t0;
 		m=mean(f)`;
 		o=cov(f)*(t0-1)/t0;
-		g=(t0-n0-&longshort.-k)/(n0-&longshort.)*a`*inv(s)*a/(1+m`*ginv(o)*m);
+		g=(t0-n0+&longshort.-k)/(n0-&longshort.)*a`*inv(s)*a/(1+m`*ginv(o)*m);
 		q=1-cdf("f",g,n0,t0-n0-k);
 		c=a`*diag(1/var(r[,1:n0-&longshort.]))*a;
 		a=mean(abs(a));
