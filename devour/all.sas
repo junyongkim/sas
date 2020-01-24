@@ -23,5 +23,8 @@ filename _ url "&master.devour/michigan.sas";
 filename _ url "&master.devour/lettau.sas";
 %include _;
 
+filename _ url "&master.devour/wurgler.sas";
+%include _;
+
 filename _ url "&master.devour/aqr.sas";
 %include _;
