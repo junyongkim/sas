@@ -26,5 +26,8 @@ filename _ url "&master.devour/lettau.sas";
 filename _ url "&master.devour/wurgler.sas";
 %include _;
 
+filename _ url "&master.devour/polk.sas";
+%include _;
+
 filename _ url "&master.devour/aqr.sas";
 %include _;
