@@ -2,35 +2,35 @@
 bm
 this code computes the monthly/daily value/equal-
 weighted decile portfolio returns by book-to-
-market ratios using wrds crsp and compustat (and
-possibly french historical book equity)
+market ratios using wrds crsp, compustat, and
+optionally french
 *************************************************/
 
-/*filename z "%sysfunc(getoption(work))\z";*/
-/**/
-/*proc http url="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/Historical_BE_Data.zip" out=z;*/
-/*run;*/
-/**/
-/*filename z zip "%sysfunc(getoption(work))\z";*/
-/**/
-/*data dff_be_with_nonindust;*/
-/*    infile z(DFF_BE_With_Nonindust.txt);*/
-/*    input CRSP_Permno First_Moody_Year Last_Moody_Year Book_Equity_1926-Book_Equity_2001;*/
-/*run;*/
-/**/
-/*filename z;*/
-/**/
-/*proc transpose out=dff_be_with_nonindust;*/
-/*    by CRSP_Permno First_Moody_Year Last_Moody_Year;*/
-/*run;*/
-/**/
-/*data dff_be_with_nonindust;*/
-/*    set dff_be_with_nonindust;*/
-/*    Moody_Year=input(substr(_NAME_,13,4),4.);*/
-/*    Book_Equity=COL1;*/
-/*    if First_Moody_Year<=Moody_Year<=Last_Moody_Year;*/
-/*    drop First_Moody_Year Last_Moody_Year _NAME_ COL1;*/
-/*run;*/
+filename z "%sysfunc(getoption(work))\z";
+
+proc http url="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/Historical_BE_Data.zip" out=z;
+run;
+
+filename z zip "%sysfunc(getoption(work))\z";
+
+data dff_be_with_nonindust;
+    infile z(DFF_BE_With_Nonindust.txt);
+    input CRSP_Permno First_Moody_Year Last_Moody_Year Book_Equity_1926-Book_Equity_2001;
+run;
+
+filename z;
+
+proc transpose out=dff_be_with_nonindust;
+    by CRSP_Permno First_Moody_Year Last_Moody_Year;
+run;
+
+data dff_be_with_nonindust;
+    set dff_be_with_nonindust;
+    Moody_Year=input(substr(_NAME_,13,4),4.);
+    Book_Equity=COL1;
+    if First_Moody_Year<=Moody_Year<=Last_Moody_Year;
+    drop First_Moody_Year Last_Moody_Year _NAME_ COL1;
+run;
 
 %let w=wrds.wharton.upenn.edu 4016;
 signon w username=_prompt_;
@@ -79,16 +79,16 @@ proc sql;
 	on permno=lpermno and ifn(month(date)>6,year(date)-1,year(date)-2)=fyear;
 quit;
 
-/*proc sql;*/
-/*	create table msfb as*/
-/*	select permno,date,ret,size,coalesce(be,Book_Equity) as be,coalesce(me,Market_Equity) as me,coalesce(bm,Book_Market) as bm*/
-/*	from msfb a left join dff b*/
-/*	on permno=CRSP_Permno and ifn(month(date)>6,year(date)-1,year(date)-2)=Moody_Year;*/
-/*	create table dsfb as*/
-/*	select permno,date,ret,size,coalesce(be,Book_Equity) as be,coalesce(me,Market_Equity) as me,coalesce(bm,Book_Market) as bm*/
-/*	from dsfb a left join dff b*/
-/*	on permno=CRSP_Permno and ifn(month(date)>6,year(date)-1,year(date)-2)=Moody_Year;*/
-/*quit;*/
+proc sql;
+	create table msfb as
+	select permno,date,ret,size,coalesce(be,Book_Equity) as be,coalesce(me,Market_Equity) as me,coalesce(bm,Book_Market) as bm
+	from msfb a left join dff b
+	on permno=CRSP_Permno and ifn(month(date)>6,year(date)-1,year(date)-2)=Moody_Year;
+	create table dsfb as
+	select permno,date,ret,size,coalesce(be,Book_Equity) as be,coalesce(me,Market_Equity) as me,coalesce(bm,Book_Market) as bm
+	from dsfb a left join dff b
+	on permno=CRSP_Permno and ifn(month(date)>6,year(date)-1,year(date)-2)=Moody_Year;
+quit;
 
 proc sql;
 	create table exchcd as
