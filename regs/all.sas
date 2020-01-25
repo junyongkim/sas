@@ -5,13 +5,13 @@ run;
 
 %let master=https://raw.githubusercontent.com/junyongkim/sascons/master/;
 
-filename _ url "&master.sascons/regs/tsregnw.sas";
+filename _ url "&master.sascons/master/regs/tsregnw.sas";
 %include _;
 
-filename _ url "&master.sascons/regs/csregnw.sas";
+filename _ url "&master.sascons/master/regs/csregnw.sas";
 %include _;
 
-filename _ url "&master.sascons/regs/csregsg.sas";
+filename _ url "&master.sascons/master/regs/csregsg.sas";
 %include _;
 
 %macro regs(portfolio=,factor=,longshort=,lag=,outest1=,outest2=,out=,gpath=,imagename=,gpath2=,imagename2=,imagefmt=);
