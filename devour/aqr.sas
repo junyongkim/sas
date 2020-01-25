@@ -154,7 +154,7 @@ run;
 %aqr2(13,x,umd,umd,19);
 %aqr2(13,x,rf,rf,19);
 
-%aqr2(14,x,,qmj factors,19);
+%aqr2(14,x,,hml devil,19);
 %aqr2(14,x,mkt,mkt,19);
 %aqr2(14,x,smb,smb,19);
 %aqr2(14,x,hmlff,hml ff,19);
