@@ -21,92 +21,85 @@ quit;
 
 proc sql;
 	create table msf as
-	select a.permno,a.date as date,ret*100 as ret,abs(prc)*shrout/(1+ret) as size1,max as max1
+	select a.permno,a.date as date,ret*100 as ret,abs(prc)*shrout/(1+ret) as size,max
 	from crsp.msf a left join max b
 	on a.permno=b.permno and intnx("mon",a.date,0)=intnx("mon",b.date,1);
 	create table dsf as
-	select a.permno,a.date as date,ret*100 as ret,abs(prc)*shrout/(1+ret) as size1,max as max1
+	select a.permno,a.date as date,ret*100 as ret,abs(prc)*shrout/(1+ret) as size,max
 	from crsp.dsf a left join max b
 	on a.permno=b.permno and intnx("mon",a.date,0)=intnx("mon",b.date,1);
 quit;
 
-data shrcd;
-	set crsp.msenames;
-	by permno;
-	if last.permno then nameendt=intnx("mon",nameendt,0,"e");
-run;
+proc sql;
+	create table exchcd as
+	select permno,namedt,ifn(namedt=max(namedt),intnx("mon",nameendt,0,"e"),nameendt) as nameendt,shrcd,exchcd
+	from crsp.msenames
+	group by permno;
+quit;
 
 proc sql;
 	create table msfe as
 	select a.*,exchcd
-	from msf a join shrcd b
+	from msf a join exchcd b
 	on a.permno=b.permno and namedt<=date<=nameendt
-	where ret>.z and size1>0 and max1>.z and shrcd in (10,11)
-	order by date;
+	where ret>.z and size>0 and max>.z and shrcd in (10,11)
+	order by date,max;
 	create table dsfe as
 	select a.*,exchcd
 	from dsf a join crsp.dsenames b
 	on a.permno=b.permno and namedt<=date<=nameendt
-	where ret>.z and size1>0 and max1>.z and shrcd in (10,11)
-	order by date;
+	where ret>.z and size>0 and max>.z and shrcd in (10,11)
+	order by date,max;
 quit;
 
 proc univariate data=msfe noprint;
 	where exchcd=1;
 	by date;
-	var max1;
-	output out=msfd pctlpre=max1 pctlpts=10 20 30 40 50 60 70 80 90;
+	var max;
+	output out=msfd pctlpre=max pctlpts=10 20 30 40 50 60 70 80 90;
 run;
 
 proc univariate data=dsfe noprint;
 	where exchcd=1;
 	by date;
-	var max1;
-	output out=dsfd pctlpre=max1 pctlpts=10 20 30 40 50 60 70 80 90;
+	var max;
+	output out=dsfd pctlpre=max pctlpts=10 20 30 40 50 60 70 80 90;
 run;
 
 data msfa;
 	merge msfe msfd;
 	by date;
-	if max1<=max110 then rank=1;
-	else if max1<=max120 then rank=2;
-	else if max1<=max130 then rank=3;
-	else if max1<=max140 then rank=4;
-	else if max1<=max150 then rank=5;
-	else if max1<=max160 then rank=6;
-	else if max1<=max170 then rank=7;
-	else if max1<=max180 then rank=8;
-	else if max1<=max190 then rank=9;
-	else rank=10;
+	if max>max90 then rank=10;
+	else if max>max80 then rank=9;
+	else if max>max70 then rank=8;
+	else if max>max60 then rank=7;
+	else if max>max50 then rank=6;
+	else if max>max40 then rank=5;
+	else if max>max30 then rank=4;
+	else if max>max20 then rank=3;
+	else if max>max10 then rank=2;
+	else rank=0;
 run;
 
 data dsfa;
 	merge dsfe dsfd;
 	by date;
-	if max1<=max110 then rank=1;
-	else if max1<=max120 then rank=2;
-	else if max1<=max130 then rank=3;
-	else if max1<=max140 then rank=4;
-	else if max1<=max150 then rank=5;
-	else if max1<=max160 then rank=6;
-	else if max1<=max170 then rank=7;
-	else if max1<=max180 then rank=8;
-	else if max1<=max190 then rank=9;
-	else rank=10;
-run;
-
-proc sort data=msfa;
-	by date rank;
-run;
-
-proc sort data=dsfa;
-	by date rank;
+	if max>max90 then rank=10;
+	else if max>max80 then rank=9;
+	else if max>max70 then rank=8;
+	else if max>max60 then rank=7;
+	else if max>max50 then rank=6;
+	else if max>max40 then rank=5;
+	else if max>max30 then rank=4;
+	else if max>max20 then rank=3;
+	else if max>max10 then rank=2;
+	else rank=0;
 run;
 
 proc means data=msfa noprint;
 	by date rank;
 	var ret;
-	weight size1;
+	weight size;
 	output out=maxmv mean=;
 run;
 
@@ -119,7 +112,7 @@ run;
 proc means data=dsfa noprint;
 	by date rank;
 	var ret;
-	weight size1;
+	weight size;
 	output out=maxdv mean=;
 run;
 
