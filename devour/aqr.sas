@@ -47,14 +47,9 @@ filename h url "%scan(&url.,&i.,%str( ))";
 data step21;
 	infile h truncover;
 	input file $32767.;
-	if find(lowcase(file),"button--download");
+	if find(lowcase(file),"href") and find(lowcase(file),"xls");
+	file=substr(file,find(file,"href"));
 	file="https:"||scan(file,2,'"');
-	call symputx("file",file,l);
-run;
-
-filename x "!userprofile\desktop\devour\aqr\_%scan(&file.,9,/)";
-
-proc http url="&file." out=x;
 run;
 
 proc append base=step2;
@@ -64,6 +59,19 @@ run;
 
 proc delete data=step21;
 run;
+
+proc sql noprint;
+	select distinct file into :file separated by " " from step2 order by file;
+quit;
+
+%do i=1 %to %sysfunc(countw(&file.,%str( )));
+
+filename x "!userprofile\desktop\devour\aqr\_%scan(%scan(&file.,&i.,%str( )),9,/)";
+
+proc http url="%scan(&file.,&i.,%str( ))" out=x;
+run;
+
+%end;
 
 %mend;
 
