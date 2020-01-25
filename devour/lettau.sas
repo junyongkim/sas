@@ -7,7 +7,7 @@ option dlcreatedir;
 libname l "!userprofile\desktop\devour\lettau\";
 option nodlcreatedir;
 
-filename c "!userprofile\desktop\cay_current.csv";
+filename c "!userprofile\desktop\devour\lettau\_cay_current.csv";
 
 proc http url="https://drive.google.com/u/0/uc?id=1upTaL-6iv-9BI8TI_qgKxyCMk1nkVX7L" out=c;
 run;
@@ -17,7 +17,7 @@ data l.cay_current;
 	input date c a y cay;
 run;
 
-filename c "!userprofile\desktop\cay_ms_current.csv";
+filename c "!userprofile\desktop\devour\lettau\_cay_ms_current.csv";
 
 proc http url="https://drive.google.com/u/0/uc?id=1hzhSVWLOEIiRIo4Tbttd0NyTQts2T4Gp" out=c;
 run;
