@@ -7,7 +7,7 @@ option dlcreatedir;
 libname p "!userprofile\desktop\devour\polk\";
 option nodlcreatedir;
 
-filename x "!userprofile\desktop\CGPTdata.xlsx";
+filename x "!userprofile\desktop\devour\polk\_CGPTdata.xlsx";
 
 proc http url="http://personal.lse.ac.uk/polk/research/CGPTdata.xlsx" out=x;
 run;
@@ -15,7 +15,7 @@ run;
 proc import file=x dbms=xlsx replace out=p.cgptdata;
 run;
 
-filename x "!userprofile\desktop\GorGdataarchive.xls";
+filename x "!userprofile\desktop\devour\polk\_GorGdataarchive.xls";
 
 proc http url="http://personal.lse.ac.uk/polk/research/GorGdataarchive.xls" out=x;
 run;
