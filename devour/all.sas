@@ -35,5 +35,8 @@ filename _ url "&master.devour/ludvigson.sas";
 filename _ url "&master.devour/koijen.sas";
 %include _;
 
+filename _ url "&master.devour/davis.sas";
+%include _;
+
 filename _ url "&master.devour/aqr.sas";
 %include _;
