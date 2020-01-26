@@ -99,36 +99,40 @@ quit;
 
 proc sql;
 	create table msfe as
-	select a.*,exchcd
+	select a.*,exchcd,month(date)=7 as july
 	from msfb a join exchcd b
 	on a.permno=b.permno and namedt<=date<=nameendt
 	where ret>.z and size>0 and bm and shrcd in (10,11)
 	order by date,bm;
 	create table dsfe as
-	select a.*,exchcd
+	select a.*,exchcd,(month(date)=7)*(date=min(date)) as july
 	from dsfb a join crsp.dsenames b
 	on a.permno=b.permno and namedt<=date<=nameendt
 	where ret>.z and size>0 and bm and shrcd in (10,11)
-	order by date,bm;
+	group by intnx("mon",date,0) order by date,bm;
 quit;
 
 proc univariate data=msfe noprint;
-	where bm>0 and exchcd=1;
+	where bm>0 and exchcd=1 and july;
 	by date;
 	var bm;
 	output out=msfd pctlpre=bm pctlpts=10 20 30 40 50 60 70 80 90;
 run;
 
 proc univariate data=dsfe noprint;
-	where bm>0 and exchcd=1;
+	where bm>0 and exchcd=1 and july;
 	by date;
 	var bm;
 	output out=dsfd pctlpre=bm pctlpts=10 20 30 40 50 60 70 80 90;
 run;
 
+proc sql;
+	create table msfa as select a.*,bm10,bm20,bm30,bm40,bm50,bm60,bm70,bm80,bm90 from msfe a left join msfd b on ifn(month(a.date)>6,year(a.date),year(a.date)-1)=year(b.date) order by date,bm;
+	create table dsfa as select a.*,bm10,bm20,bm30,bm40,bm50,bm60,bm70,bm80,bm90 from dsfe a left join dsfd b on ifn(month(a.date)>6,year(a.date),year(a.date)-1)=year(b.date) order by date,bm;
+quit;
+
 data msfa;
-	merge msfe msfd;
-	by date;
+	set msfa;
 	if bm>bm90 then rank=10;
 	else if bm>bm80 then rank=9;
 	else if bm>bm70 then rank=8;
@@ -143,8 +147,7 @@ data msfa;
 run;
 
 data dsfa;
-	merge dsfe dsfd;
-	by date;
+	set dsfa;
 	if bm>bm90 then rank=10;
 	else if bm>bm80 then rank=9;
 	else if bm>bm70 then rank=8;
