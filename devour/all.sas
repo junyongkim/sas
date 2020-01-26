@@ -29,5 +29,8 @@ filename _ url "&master.devour/wurgler.sas";
 filename _ url "&master.devour/polk.sas";
 %include _;
 
+filename _ url "&master.devour/ludvigson.sas";
+%include _;
+
 filename _ url "&master.devour/aqr.sas";
 %include _;
