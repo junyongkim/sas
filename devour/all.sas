@@ -38,5 +38,8 @@ filename _ url "&master.devour/koijen.sas";
 filename _ url "&master.devour/davis.sas";
 %include _;
 
+filename _ url "&master.devour/jiang.sas";
+%include _;
+
 filename _ url "&master.devour/aqr.sas";
 %include _;
