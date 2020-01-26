@@ -51,7 +51,7 @@ quit;
 proc sql;
 	create table bm as
 	select gvkey,datadate,fyear,
-		coalesce(seq,ceq+upstk,at-lt)-coalesce(txditc,0)+coalesce(pstkrv,pstkl,upstk) as be,
+		coalesce(seq,ceq+upstk,at-lt)+coalesce(txditc,0)-coalesce(pstkrv,pstkl,upstk) as be,
 		prcc_c*csho as me,
 		calculated be/calculated me as bm
 	from comp.funda
