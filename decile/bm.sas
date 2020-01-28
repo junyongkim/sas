@@ -44,7 +44,7 @@ proc sql;
 	create table dff as
 	select a.*,abs(prc)*shrout/1000 as Market_Equity,Book_Equity/calculated Market_Equity as Book_Market
 	from dff_be_with_nonindust a left join crsp.msf b
-	on CRSP_Permno=permno and Moody_Year=year(date)
+	on CRSP_Permno=permno and Moody_Year=year(date)-1
 	where month(date)=12;
 quit;
 
@@ -83,11 +83,11 @@ proc sql;
 	create table msfb as
 	select permno,date,ret,size,coalesce(be,Book_Equity) as be,coalesce(me,Market_Equity) as me,coalesce(bm,Book_Market) as bm
 	from msfb a left join dff b
-	on permno=CRSP_Permno and ifn(month(date)>6,year(date)-1,year(date)-2)=Moody_Year;
+	on permno=CRSP_Permno and ifn(month(date)>6,year(date),year(date)-1)=Moody_Year;
 	create table dsfb as
 	select permno,date,ret,size,coalesce(be,Book_Equity) as be,coalesce(me,Market_Equity) as me,coalesce(bm,Book_Market) as bm
 	from dsfb a left join dff b
-	on permno=CRSP_Permno and ifn(month(date)>6,year(date)-1,year(date)-2)=Moody_Year;
+	on permno=CRSP_Permno and ifn(month(date)>6,year(date),year(date)-1)=Moody_Year;
 quit;
 
 proc sql;
