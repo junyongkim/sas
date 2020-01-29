@@ -44,5 +44,8 @@ filename _ url "&master.devour/jiang.sas";
 filename _ url "&master.devour/moskowitz.sas";
 %include _;
 
+filename _ url "&master.devour/daniel.sas";
+%include _;
+
 filename _ url "&master.devour/aqr.sas";
 %include _;
