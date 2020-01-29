@@ -37,10 +37,10 @@ run;
 
 %end;
 
-proc import file="!userprofile\desktop\devour\_nagel\_%scan(&file.,3,~)" dbms=%scan(%scan(&file.,3,~),2,.) replace out=%scan(%scan(&file.,3,~),1,.);
+proc import file="!userprofile\desktop\devour\_nagel\_%scan(&file.,3,~)" dbms=%scan(%scan(&file.,3,~),2,.) replace out=n.%scan(%scan(&file.,3,~),1,.);
 run;
 
-proc import file="!userprofile\desktop\devour\_nagel\_%scan(&file.,9,~)" dbms=%scan(%scan(&file.,9,~),2,.) replace out=%scan(%scan(&file.,9,~),1,.);
+proc import file="!userprofile\desktop\devour\_nagel\_%scan(&file.,9,~)" dbms=%scan(%scan(&file.,9,~),2,.) replace out=n.%scan(%scan(&file.,9,~),1,.);
 run;
 
 %macro _(i,j);
@@ -54,7 +54,7 @@ data _null_;
 	put _infile_;
 run;
 
-proc import file=_ dbms=csv replace out=%scan(%scan(&file.,&i.,~),1,.);
+proc import file=_ dbms=csv replace out=n.%scan(%scan(&file.,&i.,~),1,.);
 run;
 
 %mend;
@@ -71,6 +71,9 @@ run;
 %mend;
 
 %_nagel;
+
+libname n;
+filename _;
 
 proc printto;
 run;
