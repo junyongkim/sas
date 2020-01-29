@@ -1,10 +1,10 @@
 resetline;
 
-proc printto log="!userprofile\desktop\devour\nagel.txt";
+proc printto log="!userprofile\desktop\devour\_nagel.txt";
 run;
 
 option dlcreatedir;
-libname n "!userprofile\desktop\devour\nagel\";
+libname n "!userprofile\desktop\devour\_nagel\";
 option nodlcreatedir;
 
 filename _ url "https://voices.uchicago.edu/stefannagel/code-and-data/";
@@ -22,7 +22,7 @@ data url;
 	drop i;
 run;
 
-%macro nagel;
+%macro _nagel;
 
 proc sql noprint;
 	select url,file into :url separated by "~",:file separated by "~" from url order by monotonic();
@@ -30,17 +30,17 @@ quit;
 
 %do i=1 %to %sysfunc(countw(&url.,~));
 
-filename _ "!userprofile\desktop\devour\nagel\_%scan(&file.,&i.,~)";
+filename _ "!userprofile\desktop\devour\_nagel\_%scan(&file.,&i.,~)";
 
 proc http url="%scan(&url.,&i.,~)" out=_;
 run;
 
 %end;
 
-proc import file="!userprofile\desktop\devour\nagel\_%scan(&file.,3,~)" dbms=%scan(%scan(&file.,3,~),2,.) replace out=%scan(%scan(&file.,3,~),1,.);
+proc import file="!userprofile\desktop\devour\_nagel\_%scan(&file.,3,~)" dbms=%scan(%scan(&file.,3,~),2,.) replace out=%scan(%scan(&file.,3,~),1,.);
 run;
 
-proc import file="!userprofile\desktop\devour\nagel\_%scan(&file.,9,~)" dbms=%scan(%scan(&file.,9,~),2,.) replace out=%scan(%scan(&file.,9,~),1,.);
+proc import file="!userprofile\desktop\devour\_nagel\_%scan(&file.,9,~)" dbms=%scan(%scan(&file.,9,~),2,.) replace out=%scan(%scan(&file.,9,~),1,.);
 run;
 
 %macro _(i,j);
@@ -48,7 +48,7 @@ run;
 filename _ temp;
 
 data _null_;
-	infile "!userprofile\desktop\devour\nagel\_%scan(&file.,&i.,~)" firstobs=&j.;
+	infile "!userprofile\desktop\devour\_nagel\_%scan(&file.,&i.,~)" firstobs=&j.;
 	file _;
 	input;
 	put _infile_;
@@ -70,7 +70,7 @@ run;
 
 %mend;
 
-%nagel;
+%_nagel;
 
 proc printto;
 run;
