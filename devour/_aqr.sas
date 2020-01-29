@@ -1,10 +1,10 @@
 resetline;
 
-proc printto log="!userprofile\desktop\devour\aqr.txt";
+proc printto log="!userprofile\desktop\devour\_aqr.txt";
 run;
 
 option dlcreatedir;
-libname a "!userprofile\desktop\devour\aqr\";
+libname a "!userprofile\desktop\devour\_aqr\";
 option nodlcreatedir;
 
 filename h url 'https://www.aqr.com/Insights/Datasets?&page=1';
@@ -66,7 +66,7 @@ quit;
 
 %do i=1 %to %sysfunc(countw(&file.,%str( )));
 
-filename x "!userprofile\desktop\devour\aqr\_%scan(%scan(&file.,&i.,%str( )),9,/)";
+filename x "!userprofile\desktop\devour\_aqr\_%scan(%scan(&file.,&i.,%str( )),9,/)";
 
 proc http url="%scan(&file.,&i.,%str( ))" out=x;
 run;
@@ -79,12 +79,12 @@ run;
 
 data _null_;
 	set step2;
-	file "!userprofile\desktop\devour\aqr\_xlsx.txt";
+	file "!userprofile\desktop\devour\_aqr\_xlsx.txt";
 	put file;
 run;
 
 data step3;
-	infile 'dir /b %userprofile%\desktop\devour\aqr\' pipe truncover;
+	infile 'dir /b %userprofile%\desktop\devour\_aqr\' pipe truncover;
 	input file $32767.;
 	if file="_xlsx.txt" then delete;
 	name=compress(scan(file,1,"."),"-_");
@@ -99,7 +99,7 @@ quit;
 
 %macro aqr2(file2,dbms,out,range1,range2);
 
-proc import file="!userprofile\desktop\devour\aqr\%scan(&file.,&file2.,%str( ))" dbms=xls&dbms. replace out=a.%scan(&name.,&file2.,%str( ))&out.;
+proc import file="!userprofile\desktop\devour\_aqr\%scan(&file.,&file2.,%str( ))" dbms=xls&dbms. replace out=a.%scan(&name.,&file2.,%str( ))&out.;
 	range="&range1.$a&range2.:0";
 run;
 
