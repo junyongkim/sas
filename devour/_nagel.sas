@@ -22,7 +22,7 @@ data url;
 	drop i;
 run;
 
-%macro _nagel;
+%macro nagel;
 
 proc sql noprint;
 	select url,file into :url separated by "~",:file separated by "~" from url order by monotonic();
@@ -70,7 +70,7 @@ run;
 
 %mend;
 
-%_nagel;
+%nagel;
 
 libname n;
 filename _;
