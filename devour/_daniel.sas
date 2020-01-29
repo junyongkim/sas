@@ -22,7 +22,7 @@ data url;
 	drop i;
 run;
 
-%macro _daniel;
+%macro daniel;
 
 proc sql noprint;
 	select url,file into :url separated by "~",:file separated by "~" from url;
@@ -62,7 +62,7 @@ run;
 
 %mend;
 
-%_daniel;
+%daniel;
 
 libname d;
 filename _;
