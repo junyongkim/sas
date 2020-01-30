@@ -3,7 +3,7 @@ proc format;
 	picture parenthesis (fuzz=0 round) low--99.995="NEGATIVE" -99.995<-0="0009.00)" (prefix="(-") 0-<999.995="0009.00)" (prefix="(") 999.995-high="POSITIVE";
 run;
 
-%let master=https://raw.githubusercontent.com/junyongkim/sascons/master/;
+%let master=https://raw.githubusercontent.com/junyongkim/sas/master/;
 
 filename _ url "&master.regs/tsregnw.sas";
 %include _;

@@ -10,7 +10,7 @@ libname h "!userprofile\desktop\hxz\";
 libname h;
 option nodlcreatedir;
 
-%let master=https://raw.githubusercontent.com/junyongkim/sascons/master/;
+%let master=https://raw.githubusercontent.com/junyongkim/sas/master/;
 
 filename _ url "&master.hxz/factors.sas";
 %include _;

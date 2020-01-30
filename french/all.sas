@@ -10,7 +10,7 @@ libname f "!userprofile\desktop\french\";
 libname f;
 option nodlcreatedir;
 
-%let master=https://raw.githubusercontent.com/junyongkim/sascons/master/;
+%let master=https://raw.githubusercontent.com/junyongkim/sas/master/;
 
 filename _ url "&master.french/data_library.sas";
 %include _;

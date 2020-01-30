@@ -3,7 +3,7 @@ libname d "!userprofile\desktop\devour\";
 libname d;
 option nodlcreatedir;
 
-%let master=https://raw.githubusercontent.com/junyongkim/sascons/master/;
+%let master=https://raw.githubusercontent.com/junyongkim/sas/master/;
 
 filename _ url "&master.devour/stambaugh.sas";
 %include _;
