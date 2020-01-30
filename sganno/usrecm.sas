@@ -17,7 +17,7 @@ data usrecm;
 	set usrecm;
 	display="fill";
 	fillcolor="black";
-	filltransparency=0.9;
+	filltransparency=0.8;
 	x1space="datavalue";
 	y1space="wallpaper";
 	function="polygon ";
