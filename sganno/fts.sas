@@ -42,7 +42,7 @@ data fts;
 	display="fill";
 	if fts then fillcolor="red ";
 	else fillcolor="lime";
-	filltransparency=0.9;
+	filltransparency=0.8;
 	x1space="datavalue";
 	y1space="wallpercent";
 	function="polygon ";
