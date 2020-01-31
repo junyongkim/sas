@@ -14,7 +14,7 @@ filename _ url "&master.regs/csregnw.sas";
 filename _ url "&master.regs/csregsg.sas";
 %include _;
 
-%macro regs(portfolio=,factor=,longshort=,lag=,outest1=,outest2=,out=,gpath=,imagename=,gpath2=,imagename2=,imagefmt=);
+%macro regs(portfolio=,factor=,longshort=,lag=,outest1=,outest2=,out=,gpath="!userprofile\desktop\",imagename=,gpath2="!userprofile\desktop\",imagename2=,imagefmt=png);
 
 %tsregnw(portfolio=&portfolio.,factor=&factor.,longshort=&longshort.,lag=&lag.,outest=&outest1.);
 %csregnw(portfolio=&portfolio.,factor=&factor.,longshort=&longshort.,lag=&lag.,outest=&outest2.);
