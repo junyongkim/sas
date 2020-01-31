@@ -1,6 +1,6 @@
 /*************************************************
 csregsg
-this code enables macro csregsg, which estimates
+enables macro csregsg, which estimates
 cross-sectional regressions and reports various
 ols, gls, gmm, and emm stats using portfolios and
 factors together
