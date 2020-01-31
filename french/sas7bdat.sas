@@ -4,8 +4,9 @@ proc printto log="!userprofile\desktop\french\sas7bdat.txt";
 run;
 
 data csv;
-	infile 'dir /b %userprofile%\desktop\french\csv\' pipe truncover;
+	infile "!userprofile\desktop\french\data_library.txt" truncover;
 	input csv $32767.;
+	csv=reverse(substr(reverse(strip(csv)),9))||".csv";
 run;
 
 data csv;
