@@ -3,15 +3,15 @@ resetline;
 proc printto log="!userprofile\desktop\french\sas7bdat2.txt";
 run;
 
-libname s "!userprofile\desktop\french\sas7bdat\";
-option dlcreatedir;
-libname s2 "!userprofile\desktop\french\sas7bdat2\";
-option nodlcreatedir;
-
 data zip;
 	infile "!userprofile\desktop\french\data_library.txt" truncover;
 	input zip $32767.;
 run;
+
+libname s "!userprofile\desktop\french\sas7bdat\";
+option dlcreatedir;
+libname s2 "!userprofile\desktop\french\sas7bdat2\";
+option nodlcreatedir;
 
 %macro sas7bdat2;
 
