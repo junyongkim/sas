@@ -1,7 +1,7 @@
 /*************************************************
 tsregnw
-this code enables macro tsregnw, which estimates
-time-series regressions and reports newey-west and
+enables macro tsregnw, which estimates time-series
+regressions and reports newey-west and
 gibbons-ross-shanken stats using portfolios and
 factors together
 portfolio is long and then long-short returns
