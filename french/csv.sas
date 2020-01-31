@@ -19,8 +19,8 @@ proc sql noprint;
 	select zip into :zip separated by " " from zip;
 quit;
 
-%do i=1 %to %sysfunc(countw(&zip.," "));
-filename z zip "!userprofile\desktop\french\zip\%scan(&zip.,&i.,' ')";
+%do i=1 %to %sysfunc(countw(&zip.,%str( )));
+filename z zip "!userprofile\desktop\french\zip\%scan(&zip.,&i.,%str( ))";
 %let j=%sysfunc(dopen(z));
 %let c=%sysfunc(dread(&j.,1));
 %let k=%sysfunc(dclose(&j.));

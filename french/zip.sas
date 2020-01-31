@@ -4,7 +4,7 @@ proc printto log="!userprofile\desktop\french\zip.txt";
 run;
 
 data data_library;
-	infile "!userprofile\desktop\french\data_library.txt";
+	infile "!userprofile\desktop\french\data_library.txt" truncover;
 	input file $32767.;
 run;
 
@@ -21,11 +21,11 @@ proc sql noprint;
 	select file into :file separated by " " from data_library;
 quit;
 
-%do i=1 %to %sysfunc(countw(&file.," "));
+%do i=1 %to %sysfunc(countw(&file.,%str( )));
 
-filename z "!userprofile\desktop\french\zip\%scan(&file.,&i.,' ')";
+filename z "!userprofile\desktop\french\zip\%scan(&file.,&i.,%str( ))";
 
-proc http url="&french.ftp/%scan(&file.,&i.,' ')" out=z;
+proc http url="&french.ftp/%scan(&file.,&i.,%str( ))" out=z;
 run;
 
 %end;

@@ -32,12 +32,12 @@ proc sql noprint;
 	select csv,firstobs into :csv separated by " ",:firstobs separated by " " from csv;
 quit;
 
-%do i=1 %to %sysfunc(countw(&csv.," "));
+%do i=1 %to %sysfunc(countw(&csv.,%str( )));
 
-filename c "!userprofile\desktop\french\csv\%scan(&csv.,&i.,' ')";
+filename c "!userprofile\desktop\french\csv\%scan(&csv.,&i.,%str( ))";
 
 data _null_;
-	infile c firstobs=%scan(&firstobs.,&i.," ");
+	infile c firstobs=%scan(&firstobs.,&i.,%str( ));
 	file t;
 	input;
 	put _infile_;
