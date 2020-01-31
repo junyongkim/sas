@@ -16,7 +16,7 @@ option nodlcreatedir;
 %macro csv;
 
 proc sql noprint;
-	select zip into :zip separated by " " from zip;
+	select zip into :zip separated by " " from zip order by monotonic();
 quit;
 
 %do i=1 %to %sysfunc(countw(&zip.,%str( )));
