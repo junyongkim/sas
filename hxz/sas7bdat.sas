@@ -3,9 +3,12 @@ resetline;
 proc printto log="!userprofile\desktop\hxz\sas7bdat.txt";
 run;
 
+filename t ("!userprofile\desktop\hxz\factors.txt","!userprofile\desktop\hxz\testingportfolios.txt");
+
 data csv;
-	infile 'dir /b %userprofile%\desktop\hxz\csv\' pipe truncover;
+	infile t truncover;
 	input file $32767.;
+	file=reverse(substr(reverse(file),1,find(reverse(file),"/")-1));
 run;
 
 option dlcreatedir;
@@ -15,7 +18,7 @@ option nodlcreatedir;
 %macro sas7bdat;
 
 proc sql noprint;
-	select file into :file separated by " " from csv;
+	select file into :file separated by " " from csv order by monotonic();
 quit;
 
 %do i=1 %to %sysfunc(countw(&file.,%str( )));
