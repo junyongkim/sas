@@ -4,7 +4,7 @@ proc printto log="!userprofile\desktop\french\csv.txt";
 run;
 
 data zip;
-	infile 'dir /b %userprofile%\desktop\french\zip\' pipe truncover;
+	infile "!userprofile\desktop\french\data_library.txt" truncover;
 	input zip $32767.;
 run;
 
