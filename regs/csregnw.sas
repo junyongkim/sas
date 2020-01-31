@@ -1,6 +1,6 @@
 /*************************************************
 csregnw
-this code enables macro csregnw, which estimates
+enables macro csregnw, which estimates
 cross-sectional regressions and reports various
 ols, gls, gmm, and emm stats using portfolios and
 factors together
