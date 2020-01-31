@@ -1,6 +1,6 @@
 /*************************************************
 french
-this code downloads all french data to desktop
+downloads all french data to desktop
 empty french in desktop before including this
 avoid _ as filename when including this
 *************************************************/

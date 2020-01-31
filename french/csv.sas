@@ -4,13 +4,9 @@ proc printto log="!userprofile\desktop\french\csv.txt";
 run;
 
 data zip;
-	infile 'dir /b %userprofile%\desktop\french\zip\' pipe truncover length=l;
-	input zip $varying32767. l;
+	infile 'dir /b %userprofile%\desktop\french\zip\' pipe truncover;
+	input zip $32767.;
 run;
-
-proc sql noprint;
-	select zip into :zip separated by " " from zip;
-quit;
 
 option dlcreatedir;
 libname c "!userprofile\desktop\french\csv\";
@@ -18,6 +14,10 @@ libname c;
 option nodlcreatedir;
 
 %macro csv;
+
+proc sql noprint;
+	select zip into :zip separated by " " from zip;
+quit;
 
 %do i=1 %to %sysfunc(countw(&zip.," "));
 filename z zip "!userprofile\desktop\french\zip\%scan(&zip.,&i.,' ')";

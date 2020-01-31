@@ -4,8 +4,8 @@ proc printto log="!userprofile\desktop\french\sas7bdat.txt";
 run;
 
 data csv;
-	infile 'dir /b %userprofile%\desktop\french\csv\' pipe truncover length=l;
-	input csv $varying32767. l;
+	infile 'dir /b %userprofile%\desktop\french\csv\' pipe truncover;
+	input csv $32767.;
 run;
 
 data csv;
@@ -21,16 +21,16 @@ data csv;
 	output;
 run;
 
-proc sql noprint;
-	select csv,firstobs into :csv separated by " ",:firstobs separated by " " from csv;
-quit;
-
 option dlcreatedir;
 libname s "!userprofile\desktop\french\sas7bdat\";
 option nodlcreatedir;
 filename t temp;
 
 %macro sas7bdat;
+
+proc sql noprint;
+	select csv,firstobs into :csv separated by " ",:firstobs separated by " " from csv;
+quit;
 
 %do i=1 %to %sysfunc(countw(&csv.," "));
 
