@@ -8,16 +8,16 @@ portfolio is long and then long-short returns
 factor is factors and then one risk-free
 longshort is the number of long-short returns
 out is a data set of estimates
-gpath is the image location (unless omitted)
+gpath is the image location (default desktop)
 imagename is the image name (unless omitted)
-gpath2 is the gls image location (unless omitted)
+gpath2 is for the gls image (default desktop)
 imagename2 is the gls image name (unless omitted)
 imagefmt is the image format (default png)
 date in portfolio and date in factor must match
 avoid csregsg as macro outside this
 *************************************************/
 
-%macro csregsg(portfolio=,factor=,longshort=,out=,gpath=,imagename=,gpath2=,imagename2=,imagefmt=);
+%macro csregsg(portfolio=,factor=,longshort=,out=,gpath="!userprofile\desktop\",imagename=,gpath2="!userprofile\desktop\",imagename2=,imagefmt=png);
 
 proc sql noprint;
 	select date,min(date),max(date) into :dat1 separated by " ",:min1 trimmed,:max1 trimmed from &portfolio. order by date;
@@ -101,7 +101,7 @@ data &out.;
 	set &out.;
 run;
 
-%if &gpath.= or &imagename.= %then %do;
+%if &imagename.= %then %do;
 
 %end;
 
@@ -128,7 +128,7 @@ run;
 
 %end;
 
-%if &gpath2.= or &imagename2.= %then %do;
+%if &imagename2.= %then %do;
 
 %end;
 
