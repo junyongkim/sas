@@ -1,7 +1,8 @@
 data dictionary;
 	i="d"||put(_n_,z3.);
-	infile 'dir /b %userprofile%\desktop\french\csv\' pipe truncover;
+	infile "!userprofile\desktop\french\data_library.txt" truncover;
 	input j $32767.;
+	j=reverse(substr(reverse(strip(j)),9));
 run;
 
 proc export replace file="!userprofile\desktop\french\dictionary.txt";
