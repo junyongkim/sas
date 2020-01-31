@@ -3,17 +3,12 @@ resetline;
 proc printto log="!userprofile\desktop\hxz\csv.txt";
 run;
 
-%let hxz=http://global-q.org/;
 filename t ("!userprofile\desktop\hxz\factors.txt","!userprofile\desktop\hxz\testingportfolios.txt");
 
 data factorstestingportfolios;
-	infile t length=l;
-	input url $varying32767. l;
+	infile t;
+	input url $32767.;
 	file=reverse(substr(reverse(url),1,find(reverse(url),"/")-1));
-run;
-
-proc sql noprint;
-	select url,file into :url separated by " ",:file separated by " " from factorstestingportfolios;
 run;
 
 option dlcreatedir;
@@ -22,6 +17,12 @@ libname c;
 option dlcreatedir;
 
 %macro csv;
+
+%let hxz=http://global-q.org/;
+
+proc sql noprint;
+	select url,file into :url separated by " ",:file separated by " " from factorstestingportfolios;
+run;
 
 %do i=1 %to %sysfunc(countw(&url.," "));
 

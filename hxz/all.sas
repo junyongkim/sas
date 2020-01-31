@@ -1,6 +1,6 @@
 /*************************************************
 hxz
-this code downloads all hxz data to desktop
+downloads all hxz data to desktop
 empty hxz in desktop before including this
 avoid _ as filename when including this
 *************************************************/
