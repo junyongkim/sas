@@ -1,3 +1,9 @@
+/*************************************************
+sz
+computes the monthly/daily value/equal-weighted
+decile portfolio returns by size using wrds crsp
+*************************************************/
+
 %let w=wrds.wharton.upenn.edu 4016;
 signon w username=_prompt_;
 
