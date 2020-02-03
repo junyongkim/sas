@@ -1,8 +1,8 @@
 /*************************************************
 max
-this code computes the monthly/daily value/equal-
-weighted decile portfolio returns by monthly
-maximum daily returns using wrds crsp
+computes the monthly/daily value/equal-weighted
+decile portfolio returns by monthly maximum daily
+returns using wrds crsp
 *************************************************/
 
 %let wrds=wrds.wharton.upenn.edu 4016;
