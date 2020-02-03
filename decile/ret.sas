@@ -1,7 +1,7 @@
 /*************************************************
 ret
-computes the monthly/daily value-weighted decile
-portfolio returns by prior returns using wrds crsp
+computes the monthly/daily value/equal-weighted
+decile portfolio returns by returns using crsp
 *************************************************/
 
 %let wrds=wrds.wharton.upenn.edu 4016;
@@ -44,22 +44,42 @@ quit;
 proc means data=retm noprint;
 	by date rank;
 	var ret;
-	weight size;
-	output out=retm mean=;
-proc transpose prefix=ret out=retm(drop=_:);
+	output out=retme mean=;
+proc transpose prefix=retme out=retme(drop=_:);
 	by date;
 	id rank;
 	var ret;
+proc means data=retm noprint;
+	by date rank;
+	var ret;
+	weight size;
+	output out=retm mean=;
+proc transpose prefix=retm out=retm(drop=_:);
+	by date;
+	id rank;
+	var ret;
+data retm;
+	merge retm retme;
 proc download;
+proc means data=retd noprint;
+	by date rank;
+	var ret;
+	output out=retde mean=;
+proc transpose prefix=retde out=retde(drop=_:);
+	by date;
+	id rank;
+	var ret;
 proc means data=retd noprint;
 	by date rank;
 	var ret;
 	weight size;
 	output out=retd mean=;
-proc transpose prefix=ret out=retd(drop=_:);
+proc transpose prefix=retd out=retd(drop=_:);
 	by date;
 	id rank;
 	var ret;
+data retd;
+	merge retd retde;
 proc download;
 run;
 
