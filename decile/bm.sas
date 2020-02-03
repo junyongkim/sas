@@ -1,9 +1,8 @@
 /*************************************************
 bm
-this code computes the monthly/daily value/equal-
-weighted decile portfolio returns by book-to-
-market ratios using wrds crsp, compustat, and
-optionally french
+computes the monthly/daily value/equal-weighted
+decile portfolio returns by book-to-market ratios
+using wrds crsp, compustat, and optionally french
 *************************************************/
 
 filename z "%sysfunc(getoption(work))\z";
