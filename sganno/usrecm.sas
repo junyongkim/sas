@@ -19,7 +19,7 @@ data usrecm;
 	fillcolor="black";
 	filltransparency=0.8;
 	x1space="datavalue";
-	y1space="wallpaper";
+	y1space="wallpercent";
 	function="polygon ";
 	x1=peak;
 	y1=0;
