@@ -37,8 +37,8 @@ data rank;
 	else if ret>.z then rank=1;
 	keep permno date rank;
 proc sql;
-	create table retm as select a.permno,a.date as date label="",ret format=best8.,abs(prc)*shrout/(1+ret) as size,rank from crsp.msf a join rank b on a.permno=b.permno and intnx("mon",a.date,0)=intnx("mon",b.date,1) where ret>.z and prc and shrout and rank order by date,rank;
-	create table retd as select a.permno,a.date as date label="",ret format=best8.,abs(prc)*shrout/(1+ret) as size,rank from crsp.dsf a join rank b on a.permno=b.permno and intnx("mon",a.date,0)=intnx("mon",b.date,1) where ret>.z and prc and shrout and rank order by date,rank;
+	create table retm as select a.permno,a.date as date label="",ret*100 as ret format=best8.,abs(prc)*shrout/(1+ret) as size,rank from crsp.msf a join rank b on a.permno=b.permno and intnx("mon",a.date,0)=intnx("mon",b.date,1) where ret>.z and prc and shrout and rank order by date,rank;
+	create table retd as select a.permno,a.date as date label="",ret*100 as ret format=best8.,abs(prc)*shrout/(1+ret) as size,rank from crsp.dsf a join rank b on a.permno=b.permno and intnx("mon",a.date,0)=intnx("mon",b.date,1) where ret>.z and prc and shrout and rank order by date,rank;
 quit;
 
 proc means data=retm noprint;
