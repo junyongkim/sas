@@ -13,6 +13,16 @@ data testingportfolios;
 	drop i;
 run;
 
+/*************************************************
+200219 one error
+1 ia 3x5 q incorrectly by ep 3x5 q (absents)
+*************************************************/
+
+data testingportfolios;
+	set testingportfolios;
+	if _n_=215 then delete;
+run;
+
 proc export replace file="!userprofile\desktop\hxz\testingportfolios.txt";
 	putnames=no;
 run;
