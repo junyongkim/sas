@@ -37,3 +37,8 @@ run;
 %import(CONSUMPTION_DATA_2018.xls,xls,consumption_data_2018_q,QUARTERLY_FREQUENCY$A1:J281)
 
 %import(cay_current.csv,csv,cay_current)
+
+%import(monthly_risk_aversion_BEX_20181031.xlsx,xlsx,bexmra,Monthly Risk Aversion Index$A1:B346)
+%import(daily_risk_aversion_BEX_20181101.xlsx,xlsx,bexdra,Sheet1$A1:B7641)
+%import(monthly_economic_uncertainty_BEX_2019012.xlsx,xlsx,bexmeu,Sheet1$A1:B346)
+%import(daily_economic_uncertainty_BEX_20190124.xlsx,xlsx,bexdeu,Sheet1$A1:B7641)
