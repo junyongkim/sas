@@ -2,9 +2,9 @@ libname h "!userprofile\desktop\pincette\http\";
 
 %macro http(filename,url);
 
-filename i "!userprofile\desktop\pincette\http\&filename.";
+filename j "!userprofile\desktop\pincette\http\&filename.";
 
-proc http url="&url." out=i;
+proc http url="&url." out=j;
 run;
 
 %mend;
