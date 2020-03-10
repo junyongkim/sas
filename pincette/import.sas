@@ -1,49 +1,37 @@
 libname i "!userprofile\desktop\pincette\import\";
 
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Daily.xlsx" dbms=xlsx replace out=i.babefd_bab;
-	range="BAB Factors$A19:AD23693";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Daily.xlsx" dbms=xlsx replace out=i.babefd_mkt;
-	range="MKT$A19:AD25002";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Daily.xlsx" dbms=xlsx replace out=i.babefd_smb;
-	range="SMB$A19:AD25002";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Daily.xlsx" dbms=xlsx replace out=i.babefd_hml;
-	range="HML FF$A19:AD25022";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Daily.xlsx" dbms=xlsx replace out=i.babefd_hmd;
-	range="HML Devil$A19:AD25022";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Daily.xlsx" dbms=xlsx replace out=i.babefd_umd;
-	range="UMD$A19:AD24852";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Daily.xlsx" dbms=xlsx replace out=i.babefd_rf;
-	range="RF$A19:B25589";
+%macro import(file,dbms,out,range);
+
+proc import file="!userprofile\desktop\pincette\http\&file." dbms=&dbms. replace out=i.&out.;
+	%if %length(&range.)>0 %then %do;
+	range="&range.";
+	%end;
 run;
 
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Monthly.xlsx" dbms=xlsx replace out=i.babefm_bab;
-	range="BAB Factors$A19:AD1089";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Monthly.xlsx" dbms=xlsx replace out=i.babefm_mkt;
-	range="MKT$A19:AD1142";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Monthly.xlsx" dbms=xlsx replace out=i.babefm_smb;
-	range="SMB$A19:AD1142";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Monthly.xlsx" dbms=xlsx replace out=i.babefm_hml;
-	range="HML FF$A19:AD1142";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Monthly.xlsx" dbms=xlsx replace out=i.babefm_hmd;
-	range="HML Devil$A19:AD1142";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Monthly.xlsx" dbms=xlsx replace out=i.babefm_umd;
-	range="UMD$A19:AD1136";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Monthly.xlsx" dbms=xlsx replace out=i.babefm_me;
-	range="ME(t-1)$A19:AD1143";
-proc import file="!userprofile\desktop\pincette\http\Betting-Against-Beta-Equity-Factors-Monthly.xlsx" dbms=xlsx replace out=i.babefm_rf;
-	range="RF$A19:B1143";
-run;
+%mend;
 
-proc import file="!userprofile\desktop\pincette\http\Quality-Minus-Junk-Factors-Daily.xlsx" dbms=xlsx replace out=i.qmjfd;
-	range="QMJ Factors$A19:AD16093";
-run;
+%import(Betting-Against-Beta-Equity-Factors-Daily.xlsx,xlsx,babefd_bab,BAB Factors$A19:AD23693)
+%import(Betting-Against-Beta-Equity-Factors-Daily.xlsx,xlsx,babefd_mkt,MKT$A19:AD25002)
+%import(Betting-Against-Beta-Equity-Factors-Daily.xlsx,xlsx,babefd_smb,SMB$A19:AD25002)
+%import(Betting-Against-Beta-Equity-Factors-Daily.xlsx,xlsx,babefd_hml,HML FF$A19:AD25022)
+%import(Betting-Against-Beta-Equity-Factors-Daily.xlsx,xlsx,babefd_hmd,HML Devil$A19:AD25022)
+%import(Betting-Against-Beta-Equity-Factors-Daily.xlsx,xlsx,babefd_umd,UMD$A19:AD24852)
+%import(Betting-Against-Beta-Equity-Factors-Daily.xlsx,xlsx,babefd_rf,RF$A19:B25589)
+%import(Betting-Against-Beta-Equity-Factors-Monthly.xlsx,xlsx,babefm_bab,BAB Factors$A19:AD1089)
+%import(Betting-Against-Beta-Equity-Factors-Monthly.xlsx,xlsx,babefm_mkt,MKT$A19:AD1142)
+%import(Betting-Against-Beta-Equity-Factors-Monthly.xlsx,xlsx,babefm_smb,SMB$A19:AD1142)
+%import(Betting-Against-Beta-Equity-Factors-Monthly.xlsx,xlsx,babefm_hml,HML FF$A19:AD1142)
+%import(Betting-Against-Beta-Equity-Factors-Monthly.xlsx,xlsx,babefm_hmd,HML Devil$A19:AD1142)
+%import(Betting-Against-Beta-Equity-Factors-Monthly.xlsx,xlsx,babefm_umd,UMD$A19:AD1136)
+%import(Betting-Against-Beta-Equity-Factors-Monthly.xlsx,xlsx,babefm_me,ME(t-1)$A19:AD1143)
+%import(Betting-Against-Beta-Equity-Factors-Monthly.xlsx,xlsx,babefm_rf,RF$A19:B1143)
+%import(Quality-Minus-Junk-Factors-Daily.xlsx,xlsx,qmjfd,QMJ Factors$A19:AD16093)
+%import(Quality-Minus-Junk-Factors-Monthly.xlsx,xlsx,qmjfm,QMJ Factors$A19:AD770)
 
-proc import file="!userprofile\desktop\pincette\http\Quality-Minus-Junk-Factors-Monthly.xlsx" dbms=xlsx replace out=i.qmjfm;
-	range="QMJ Factors$A19:AD770";
-run;
+%import(M4.csv,csv,m4)
+%import(M4d.csv,csv,m4d)
 
-proc import file="!userprofile\desktop\pincette\http\M4.csv" dbms=csv replace out=i.m4;
-run;
+%import(FTS_Dummies.xls,xls,fts_dummies,data$A1:X9266)
 
-proc import file="!userprofile\desktop\pincette\http\M4d.csv" dbms=csv replace out=i.m4d;
-run;
+%import(CONSUMPTION_DATA_2018.xls,xls,consumption_data_2018_a,ANNUAL_FREQUENCY$A1:O92)
+%import(CONSUMPTION_DATA_2018.xls,xls,consumption_data_2018_q,QUARTERLY_FREQUENCY$A1:J281)
