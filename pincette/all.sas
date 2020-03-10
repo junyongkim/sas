@@ -1,6 +1,8 @@
 option dlcreatedir;
 libname p "!userprofile\desktop\pincette\";
 
-%include "!userprofile\desktop\http.sas";
+filename i url "https://raw.githubusercontent.com/junyongkim/sas/master/pincette/http.sas";
+%include i;
 
-%include "!userprofile\desktop\import.sas";
+filename i url "https://raw.githubusercontent.com/junyongkim/sas/master/pincette/import.sas";
+%include i;
