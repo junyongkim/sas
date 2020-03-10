@@ -35,3 +35,5 @@ run;
 
 %import(CONSUMPTION_DATA_2018.xls,xls,consumption_data_2018_a,ANNUAL_FREQUENCY$A1:O92)
 %import(CONSUMPTION_DATA_2018.xls,xls,consumption_data_2018_q,QUARTERLY_FREQUENCY$A1:J281)
+
+%import(cay_current.csv,csv,cay_current)
