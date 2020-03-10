@@ -16,3 +16,7 @@ run;
 
 %http(M4.csv,http://finance.wharton.upenn.edu/~stambaug/M4.csv)
 %http(M4d.csv,http://finance.wharton.upenn.edu/~stambaug/M4d.csv)
+
+%http(FTS_Dummies.xls,http://sites.google.com/site/lievenbaele/FTS_Dummies.xls)
+
+%http(CONSUMPTION_DATA_2018.xls,https://drive.google.com/uc?id=1AdOENh6SFIfzaA724iUosfBvl7M8xI8Z)
