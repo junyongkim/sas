@@ -13,3 +13,6 @@ run;
 %http(Betting-Against-Beta-Equity-Factors-Monthly.xlsx,https://images.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/Betting-Against-Beta-Equity-Factors-Monthly.xlsx)
 %http(Quality-Minus-Junk-Factors-Daily.xlsx,https://images.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/Quality-Minus-Junk-Factors-Daily.xlsx)
 %http(Quality-Minus-Junk-Factors-Monthly.xlsx,https://images.aqr.com/-/media/AQR/Documents/Insights/Data-Sets/Quality-Minus-Junk-Factors-Monthly.xlsx)
+
+%http(M4.csv,http://finance.wharton.upenn.edu/~stambaug/M4.csv)
+%http(M4d.csv,http://finance.wharton.upenn.edu/~stambaug/M4d.csv)
