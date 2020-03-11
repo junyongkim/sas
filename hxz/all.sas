@@ -21,10 +21,10 @@ filename _ url "&master.hxz/testingportfolios.sas";
 filename _ url "&master.hxz/csv.sas";
 %include _;
 
-filename _ url "&master.hxz/sas7bdat.sas";
+filename _ url "&master.hxz/sas7bda.sas";
 %include _;
 
-filename _ url "&master.hxz/sas7bdat2.sas";
+filename _ url "&master.hxz/sas7bdat.sas";
 %include _;
 
 filename _ url "&master.hxz/dictionary.sas";
