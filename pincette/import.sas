@@ -1,10 +1,13 @@
 libname i "!userprofile\desktop\pincette\import\";
 
-%macro import(file,dbms,out,range);
+%macro import(file,dbms,out,range,delimiter);
 
 proc import file="!userprofile\desktop\pincette\http\&file." dbms=&dbms. replace out=i.&out.;
 	%if %length(&range.)>0 %then %do;
 	range="&range.";
+	%end;
+	%if %length(&delimiter.)>0 %then %do;
+	delimiter=&delimiter.;
 	%end;
 run;
 
@@ -42,3 +45,8 @@ run;
 %import(daily_risk_aversion_BEX_20181101.xlsx,xlsx,bexdra,Sheet1$A1:B7641)
 %import(monthly_economic_uncertainty_BEX_2019012.xlsx,xlsx,bexmeu,Sheet1$A1:B346)
 %import(daily_economic_uncertainty_BEX_20190124.xlsx,xlsx,bexdeu,Sheet1$A1:B7641)
+
+%import(dmrs_factor_portfolios_monthly.txt,dlm,dmrs_factor_portfolios_monthly,,"09"x)
+%import(dmrs_factor_portfolios_daily.txt,dlm,dmrs_factor_portfolios_daily,,"09"x)
+%import(dmrs_hedge_portfolios_monthly.txt,dlm,dmrs_hedge_portfolios_monthly,,"09"x)
+%import(dmrs_hedge_portfolios_daily.txt,dlm,dmrs_hedge_portfolios_daily,,"09"x)
