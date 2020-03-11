@@ -1,6 +1,6 @@
 resetline;
 
-proc printto log="!userprofile\desktop\french\sas7bdat2.txt";
+proc printto log="!userprofile\desktop\french\sas7bdat.txt";
 run;
 
 data zip;
@@ -8,12 +8,12 @@ data zip;
 	input zip $32767.;
 run;
 
-libname s "!userprofile\desktop\french\sas7bdat\";
+libname a "!userprofile\desktop\french\sas7bda\";
 option dlcreatedir;
-libname s2 "!userprofile\desktop\french\sas7bdat2\";
+libname t "!userprofile\desktop\french\sas7bdat\";
 option nodlcreatedir;
 
-%macro sas7bdat2;
+%macro sas7bdat;
 
 proc sql noprint;
 	select n(zip) into :n trimmed from zip;
@@ -21,8 +21,8 @@ quit;
 
 %do i=1 %to &n.;
 
-data s2.d%sysfunc(putn(&i.,z3.));
-	set s.d%sysfunc(putn(&i.,z3.));
+data t.d%sysfunc(putn(&i.,z3.));
+	set a.d%sysfunc(putn(&i.,z3.));
 	if date<lag(date) then i+1;
 	if i then delete;
 	drop i;
@@ -32,7 +32,7 @@ run;
 
 %mend;
 
-%sas7bdat2;
+%sas7bdat;
 
 proc printto;
 run;
