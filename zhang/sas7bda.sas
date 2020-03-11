@@ -1,9 +1,9 @@
 resetline;
 
-proc printto log="!userprofile\desktop\hxz\sas7bda.txt";
+proc printto log="!userprofile\desktop\zhang\sas7bda.txt";
 run;
 
-filename t ("!userprofile\desktop\hxz\factors.txt","!userprofile\desktop\hxz\testingportfolios.txt");
+filename t ("!userprofile\desktop\zhang\factors.txt","!userprofile\desktop\zhang\testingportfolios.txt");
 
 data csv;
 	infile t truncover;
@@ -12,7 +12,7 @@ data csv;
 run;
 
 option dlcreatedir;
-libname s "!userprofile\desktop\hxz\sas7bda\";
+libname s "!userprofile\desktop\zhang\sas7bda\";
 option nodlcreatedir;
 
 %macro sas7bda;
@@ -23,7 +23,7 @@ quit;
 
 %do i=1 %to %sysfunc(countw(&file.,%str( )));
 
-proc import file="!userprofile\desktop\hxz\csv\%scan(&file.,&i.,%str( ))" replace out=s.d%sysfunc(putn(&i.,z3.));
+proc import file="!userprofile\desktop\zhang\csv\%scan(&file.,&i.,%str( ))" replace out=s.d%sysfunc(putn(&i.,z3.));
 run;
 
 %end;
