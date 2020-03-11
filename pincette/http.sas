@@ -27,3 +27,8 @@ run;
 %http(daily_risk_aversion_BEX_20181101.xlsx,https://00d45e45-360f-43e4-a918-f4397267026f.filesusr.com/ugd/efd0b7_3ddfcdd9a16a4a0d80e42c8d5aaa5437.xlsx?dn=daily_risk_aversion_BEX_20181101.xlsx)
 %http(monthly_economic_uncertainty_BEX_2019012.xlsx,https://00d45e45-360f-43e4-a918-f4397267026f.filesusr.com/ugd/efd0b7_b5530f5233ee44c499683dce57e01c1e.xlsx?dn=monthly_economic_uncertainty_BEX_2019012.xlsx)
 %http(daily_economic_uncertainty_BEX_20190124.xlsx,https://00d45e45-360f-43e4-a918-f4397267026f.filesusr.com/ugd/efd0b7_30fa3107998345628d4d9117bdb9bdbf.xlsx?dn=daily_economic_uncertainty_BEX_20190124.xlsx)
+
+%http(dmrs_factor_portfolios_monthly.txt,http://www.kentdaniel.net/data/dmrs/dmrs_factor_portfolios_monthly.txt)
+%http(dmrs_factor_portfolios_daily.txt,http://www.kentdaniel.net/data/dmrs/dmrs_factor_portfolios_daily.txt)
+%http(dmrs_hedge_portfolios_monthly.txt,http://www.kentdaniel.net/data/dmrs/dmrs_hedge_portfolios_monthly.txt)
+%http(dmrs_hedge_portfolios_daily.txt,http://www.kentdaniel.net/data/dmrs/dmrs_hedge_portfolios_daily.txt)
