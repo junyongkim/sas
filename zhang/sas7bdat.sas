@@ -1,9 +1,9 @@
 resetline;
 
-proc printto log="!userprofile\desktop\hxz\sas7bdat.txt";
+proc printto log="!userprofile\desktop\zhang\sas7bdat.txt";
 run;
 
-libname s "!userprofile\desktop\hxz\sas7bda\";
+libname s "!userprofile\desktop\zhang\sas7bda\";
 ods results=off;
 ods output members=s;
 
@@ -12,7 +12,7 @@ run;
 
 ods results=on;
 option dlcreatedir;
-libname a "!userprofile\desktop\hxz\sas7bdat\";
+libname a "!userprofile\desktop\zhang\sas7bdat\";
 option nodlcreatedir;
 
 %macro sas7bdat;
