@@ -21,7 +21,7 @@ option dlcreatedir;
 %let hxz=http://global-q.org/;
 
 proc sql noprint;
-	select url,file into :url separated by " ",:file separated by " " from factorstestingportfolios order by monotonic();
+	select url,file into :url separated by " ",:file separated by " " from factorstestingportfolios;
 run;
 
 %do i=1 %to %sysfunc(countw(&url.,%str( )));
