@@ -1,9 +1,9 @@
 resetline;
 
-proc printto log="!userprofile\desktop\hxz\sas7bdat2.txt";
+proc printto log="!userprofile\desktop\hxz\sas7bdat.txt";
 run;
 
-libname s "!userprofile\desktop\hxz\sas7bdat\";
+libname s "!userprofile\desktop\hxz\sas7bda\";
 ods results=off;
 ods output members=s;
 
@@ -12,10 +12,10 @@ run;
 
 ods results=on;
 option dlcreatedir;
-libname s2 "!userprofile\desktop\hxz\sas7bdat2\";
+libname a "!userprofile\desktop\hxz\sas7bdat\";
 option nodlcreatedir;
 
-%macro sas7bdat2;
+%macro sas7bdat;
 
 proc sql noprint;
 	select name into :s separated by " " from s order by num;
@@ -23,11 +23,11 @@ quit;
 
 %do i=1 %to %sysfunc(countw(&s.,%str( )));
 
-proc contents data=s.%scan(&s.,&i.,%str( )) noprint out=s2.%scan(&s.,&i.,%str( ));
+proc contents data=s.%scan(&s.,&i.,%str( )) noprint out=a.%scan(&s.,&i.,%str( ));
 run;
 
 proc sql noprint;
-	select name into :name separated by " " from s2.%scan(&s.,&i.,%str( )) order by varnum;
+	select name into :name separated by " " from a.%scan(&s.,&i.,%str( )) order by varnum;
 quit;
 
 %let lowcase=%sysfunc(lowcase(&name.));
@@ -36,7 +36,7 @@ quit;
 %if %sysfunc(count(&name.,rank))>1 %then %let tag2=%substr(%scan(&name.,%eval(&n.-2),%str( )),6);
 %if %sysfunc(count(&name.,rank))>2 %then %let tag3=%substr(%scan(&name.,%eval(&n.-3),%str( )),6);
 
-data s2.%scan(&s.,&i.,%str( ));
+data a.%scan(&s.,&i.,%str( ));
 	format date;
 	%if %sysfunc(count(&lowcase.,r_f)) %then %do;
 	merge s.%scan(&s.,&i.,%str( ))(drop=r_f) s.%scan(&s.,&i.,%str( ))(keep=r_f);
@@ -73,7 +73,7 @@ run;
 
 %if %sysfunc(count(&name.,rank)) %then %do;
 
-proc transpose out=s2.%scan(&s.,&i.,%str( ))(drop=_name_);
+proc transpose out=a.%scan(&s.,&i.,%str( ))(drop=_name_);
 	by date;
 	id tag;
 	var %scan(&name.,&n.%str( ));
@@ -85,7 +85,7 @@ run;
 
 %mend;
 
-%sas7bdat2;
+%sas7bdat;
 
 proc printto;
 run;
