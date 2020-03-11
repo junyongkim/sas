@@ -1,5 +1,5 @@
-%let hxz=http://global-q.org/;
-filename h url "&hxz.factors.html";
+%let zhang=http://global-q.org/;
+filename h url "&zhang.factors.html";
 
 data factors;
 	infile h truncover lrecl=327670 column=c length=l;
@@ -12,6 +12,6 @@ data factors;
 	end;
 run;
 
-proc export replace file="!userprofile\desktop\hxz\factors.txt";
+proc export replace file="!userprofile\desktop\zhang\factors.txt";
 	putnames=no;
 run;
