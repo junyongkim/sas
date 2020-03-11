@@ -1,3 +1,8 @@
+/*************************************************
+kozak
+ludvigson shiller nagel polk
+michigan ritter koijen
+*************************************************/
 libname h "!userprofile\desktop\pincette\http\";
 
 %macro http(filename,url);
@@ -36,9 +41,3 @@ run;
 
 %http(UMO_monthly_2016.xlsx,https://drive.google.com/uc?id=1pkF5ZTv-NroqUzQNzaoCaZL5qJKDUFA7)
 %http(UMO_daily_2016.xlsx,https://drive.google.com/uc?id=1mn2MCq-AdI6lnG-9fOwL31NpX0WrWLZx)
-
-/*************************************************
-kozak ludvigson
-shiller nagel polk
-michigan ritter koijen
-*************************************************/
