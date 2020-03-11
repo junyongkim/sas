@@ -122,3 +122,8 @@ run;
 %modify06(bexdra,i(1))
 %modify06(bexmeu,int(i(1)/100))
 %modify06(bexdeu,i(1))
+
+%modify02(dmrs_hedge_portfolios_monthly)
+%modify02(dmrs_hedge_portfolios_daily)
+%modify02(dmrs_factor_portfolios_monthly)
+%modify02(dmrs_factor_portfolios_daily)
