@@ -87,7 +87,7 @@ proc datasets lib=m nolist;
 	modify &data.;
 	attrib _all_ label="";
 	attrib _all_ format=;
-run;
+quit;
 
 %mend;
 
