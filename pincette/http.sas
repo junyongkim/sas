@@ -32,3 +32,13 @@ run;
 %http(dmrs_factor_portfolios_daily.txt,http://www.kentdaniel.net/data/dmrs/dmrs_factor_portfolios_daily.txt)
 %http(dmrs_hedge_portfolios_monthly.txt,http://www.kentdaniel.net/data/dmrs/dmrs_hedge_portfolios_monthly.txt)
 %http(dmrs_hedge_portfolios_daily.txt,http://www.kentdaniel.net/data/dmrs/dmrs_hedge_portfolios_daily.txt)
+%http(DHS_factors.xlsx,http://www.kentdaniel.net/data/DHS_factors.xlsx)
+
+%http(UMO_monthly_2016.xlsx,https://drive.google.com/uc?id=1pkF5ZTv-NroqUzQNzaoCaZL5qJKDUFA7)
+%http(UMO_daily_2016.xlsx,https://drive.google.com/uc?id=1mn2MCq-AdI6lnG-9fOwL31NpX0WrWLZx)
+
+/*************************************************
+kozak ludvigson
+shiller nagel polk
+michigan ritter koijen
+*************************************************/
