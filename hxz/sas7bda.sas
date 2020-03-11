@@ -1,6 +1,6 @@
 resetline;
 
-proc printto log="!userprofile\desktop\hxz\sas7bdat.txt";
+proc printto log="!userprofile\desktop\hxz\sas7bda.txt";
 run;
 
 filename t ("!userprofile\desktop\hxz\factors.txt","!userprofile\desktop\hxz\testingportfolios.txt");
@@ -12,10 +12,10 @@ data csv;
 run;
 
 option dlcreatedir;
-libname s "!userprofile\desktop\hxz\sas7bdat\";
+libname s "!userprofile\desktop\hxz\sas7bda\";
 option nodlcreatedir;
 
-%macro sas7bdat;
+%macro sas7bda;
 
 proc sql noprint;
 	select file into :file separated by " " from csv;
@@ -30,7 +30,7 @@ run;
 
 %mend;
 
-%sas7bdat;
+%sas7bda;
 
 proc printto;
 run;
