@@ -30,7 +30,7 @@ filename t temp;
 %macro sas7bdat;
 
 proc sql noprint;
-	select csv,firstobs into :csv separated by " ",:firstobs separated by " " from csv order by monotonic();
+	select csv,firstobs into :csv separated by " ",:firstobs separated by " " from csv;
 quit;
 
 %do i=1 %to %sysfunc(countw(&csv.,%str( )));
