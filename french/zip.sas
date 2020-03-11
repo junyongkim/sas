@@ -18,7 +18,7 @@ option nodlcreatedir;
 %let french=https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/;
 
 proc sql noprint;
-	select file into :file separated by " " from data_library order by monotonic();
+	select file into :file separated by " " from data_library;
 quit;
 
 %do i=1 %to %sysfunc(countw(&file.,%str( )));
