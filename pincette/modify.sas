@@ -86,6 +86,7 @@ run;
 proc datasets lib=m nolist;
 	modify &data.;
 	attrib _all_ label="";
+	attrib _all_ format=;
 run;
 
 %mend;
@@ -127,3 +128,7 @@ run;
 %modify02(dmrs_hedge_portfolios_daily)
 %modify02(dmrs_factor_portfolios_monthly)
 %modify02(dmrs_factor_portfolios_daily)
+%modify04(dhs_factors,,date)
+
+%modify04(umo_daily,,date)
+%modify04(umo_monthly,year month,100*year+month)
