@@ -18,7 +18,7 @@ option nodlcreatedir;
 %macro sas7bdat;
 
 proc sql noprint;
-	select file into :file separated by " " from csv order by monotonic();
+	select file into :file separated by " " from csv;
 quit;
 
 %do i=1 %to %sysfunc(countw(&file.,%str( )));
