@@ -14,10 +14,10 @@ filename _ url "&master.french/zip.sas";
 filename _ url "&master.french/csv.sas";
 %include _;
 
-filename _ url "&master.french/sas7bdat.sas";
+filename _ url "&master.french/sas7bda.sas";
 %include _;
 
-filename _ url "&master.french/sas7bdat2.sas";
+filename _ url "&master.french/sas7bdat.sas";
 %include _;
 
 filename _ url "&master.french/dictionary.sas";
