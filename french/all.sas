@@ -1,10 +1,3 @@
-/*************************************************
-french
-downloads all french data to desktop
-empty french in desktop before including this
-avoid _ as filename when including this
-*************************************************/
-
 option dlcreatedir;
 libname f "!userprofile\desktop\french\";
 libname f;
@@ -22,6 +15,9 @@ filename _ url "&master.french/csv.sas";
 %include _;
 
 filename _ url "&master.french/sas7bdat.sas";
+%include _;
+
+filename _ url "&master.french/sas7bdat2.sas";
 %include _;
 
 filename _ url "&master.french/dictionary.sas";
