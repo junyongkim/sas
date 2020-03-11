@@ -50,3 +50,7 @@ run;
 %import(dmrs_factor_portfolios_daily.txt,dlm,dmrs_factor_portfolios_daily,,"09"x)
 %import(dmrs_hedge_portfolios_monthly.txt,dlm,dmrs_hedge_portfolios_monthly,,"09"x)
 %import(dmrs_hedge_portfolios_daily.txt,dlm,dmrs_hedge_portfolios_daily,,"09"x)
+%import(DHS_factors.xlsx,xlsx,dhs_factors,DHS factors$A1:C559)
+
+%import(UMO_monthly_2016.xlsx,xlsx,umo_monthly,UMO$A1:E535)
+%import(UMO_daily_2016.xlsx,xlsx,umo_daily,UMO_daily$A1:D11266)
