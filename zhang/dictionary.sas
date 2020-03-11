@@ -1,4 +1,4 @@
-filename t ("!userprofile\desktop\hxz\factors.txt","!userprofile\desktop\hxz\testingportfolios.txt");
+filename t ("!userprofile\desktop\zhang\factors.txt","!userprofile\desktop\zhang\testingportfolios.txt");
 
 data dictionary;
 	i="d"||put(_n_,z3.);
@@ -7,6 +7,6 @@ data dictionary;
 	j=scan(reverse(substr(reverse(j),1,find(reverse(j),"/")-1)),1,".");
 run;
 
-proc export replace file="!userprofile\desktop\hxz\dictionary.txt";
+proc export replace file="!userprofile\desktop\zhang\dictionary.txt";
 	putnames=no;
 run;
