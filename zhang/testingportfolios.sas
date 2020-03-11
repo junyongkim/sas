@@ -1,5 +1,5 @@
-%let hxz=http://global-q.org/;
-filename h url "&hxz.testingportfolios.html";
+%let zhang=http://global-q.org/;
+filename h url "&zhang.testingportfolios.html";
 
 data testingportfolios;
 	infile h truncover lrecl=327670 column=c length=l;
@@ -23,6 +23,6 @@ data testingportfolios;
 	if _n_=215 then delete;
 run;
 
-proc export replace file="!userprofile\desktop\hxz\testingportfolios.txt";
+proc export replace file="!userprofile\desktop\zhang\testingportfolios.txt";
 	putnames=no;
 run;
