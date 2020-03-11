@@ -8,9 +8,9 @@ data zip;
 	input zip $32767.;
 run;
 
-libname a "!userprofile\desktop\french\sas7bda\";
+libname s "!userprofile\desktop\french\sas7bda\";
 option dlcreatedir;
-libname t "!userprofile\desktop\french\sas7bdat\";
+libname a "!userprofile\desktop\french\sas7bdat\";
 option nodlcreatedir;
 
 %macro sas7bdat;
@@ -21,8 +21,8 @@ quit;
 
 %do i=1 %to &n.;
 
-data t.d%sysfunc(putn(&i.,z3.));
-	set a.d%sysfunc(putn(&i.,z3.));
+data a.d%sysfunc(putn(&i.,z3.));
+	set s.d%sysfunc(putn(&i.,z3.));
 	if date<lag(date) then i+1;
 	if i then delete;
 	drop i;
