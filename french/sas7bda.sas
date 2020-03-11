@@ -1,6 +1,6 @@
 resetline;
 
-proc printto log="!userprofile\desktop\french\sas7bdat.txt";
+proc printto log="!userprofile\desktop\french\sas7bda.txt";
 run;
 
 data csv;
@@ -23,11 +23,11 @@ data csv;
 run;
 
 option dlcreatedir;
-libname s "!userprofile\desktop\french\sas7bdat\";
+libname s "!userprofile\desktop\french\sas7bda\";
 option nodlcreatedir;
 filename t temp;
 
-%macro sas7bdat;
+%macro sas7bda;
 
 proc sql noprint;
 	select csv,firstobs into :csv separated by " ",:firstobs separated by " " from csv;
@@ -52,7 +52,7 @@ run;
 
 %mend;
 
-%sas7bdat;
+%sas7bda;
 
 proc printto;
 run;
