@@ -1,3 +1,9 @@
+/*************************************************
+pincette
+downloads selected finance data to desktop
+empty pincette in desktop before including this
+avoid i as filename when including this
+*************************************************/
 option dlcreatedir;
 libname p "!userprofile\desktop\pincette\";
 
