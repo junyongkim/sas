@@ -15,3 +15,6 @@ filename i url "https://raw.githubusercontent.com/junyongkim/sas/master/pincette
 
 filename i url "https://raw.githubusercontent.com/junyongkim/sas/master/pincette/modify.sas";
 %include i;
+
+filename i url "https://raw.githubusercontent.com/junyongkim/sas/master/pincette/pipe.sas";
+%include i;
