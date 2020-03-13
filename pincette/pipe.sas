@@ -25,7 +25,7 @@ run;
 %pipe01(uncertaintyfinancial)
 
 %http(pipe\FT_portfolio_sorts-daily-05FEB2020.7z,https://drive.google.com/uc?id=18xFaoM_JX773DB6pjLDHxXW2GWnbc-Sg)
-%http(pipe\FT_portfolio_sorts-monthly-05FEB2020.7z.zip,https://drive.google.com/uc?id=19195VlC3wsrX6KKuSYSrRD_V5RS5dbHw)
+%http(pipe\FT_portfolio_sorts-monthly-05FEB2020.7z,https://drive.google.com/uc?id=19195VlC3wsrX6KKuSYSrRD_V5RS5dbHw)
 %http(pipe\SCS_managed_portfolios-daily-05FEB2020.7z,https://drive.google.com/uc?id=19KBuezUe_38KXLmKS6ue6SJMMKSuZE4C)
 %http(pipe\SCS_managed_portfolios-monthly-05FEB2020.7z,https://drive.google.com/uc?id=19GkdT_HRsPs94dBJV5NnnmiAKVEOe1lI)
 
