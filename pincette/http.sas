@@ -1,6 +1,5 @@
 /*************************************************
-kozak
-ludvigson shiller nagel polk
+shiller nagel polk
 michigan ritter koijen
 *************************************************/
 libname h "!userprofile\desktop\pincette\http\";
