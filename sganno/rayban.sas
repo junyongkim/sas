@@ -1,4 +1,4 @@
-%macro shader(data=,date=,var=,fillcolor=black,filltransparency=0.75,out=shader);
+%macro rayban(data=,date=,var=,fillcolor=black,filltransparency=0.83,out=rayban);
 
 data &out.;
 	set &data.;
