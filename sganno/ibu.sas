@@ -48,7 +48,7 @@ data ibu;
 	function="polycont";
 	y1=100;
 	output;
-	x1=intnx("mon",input(put(mind,6.),yymmn6.),1);
+	x1=intnx("mon",input(put(maxd,6.),yymmn6.),1);
 	output;
 	y1=0;
 	output;
