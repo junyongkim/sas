@@ -22,9 +22,9 @@ run;
 
 data testingportfolios;
 	set testingportfolios;
-	if _n_=245 then delete;
-	else if _n_=244 then delete;
-	else if _n_=68 then delete;
+	if _n_=68 then delete;
+	else if _n_=245 then delete;
+	else if _n_=246 then delete;
 run;
 
 proc export replace file="!userprofile\desktop\zhang\testingportfolios.txt";
