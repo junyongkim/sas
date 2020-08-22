@@ -14,13 +14,17 @@ data testingportfolios;
 run;
 
 /*************************************************
-200219 one error
-1 ia 3x5 q incorrectly by ep 3x5 q (absents)
+200822 three errors
+1 cim_12 3x5 w incorrectly by cm_12 3x5 w (presents)
+2 p52w_12 a incorrectly by p52w_6 a (absents)
+3 p52w_12 q incorrectly by p52w_6 q (absents)
 *************************************************/
 
 data testingportfolios;
 	set testingportfolios;
-	if _n_=215 then delete;
+	if _n_=68 then file="uploads/1/2/2/6/122679606/portf_me_cim_12_weekly_2019a.csv";
+	else if _n_=244 then delete;
+	else if _n_=245 then delete;
 run;
 
 proc export replace file="!userprofile\desktop\zhang\testingportfolios.txt";
