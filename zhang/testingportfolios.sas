@@ -15,14 +15,14 @@ run;
 
 /*************************************************
 200822 three errors
-1 cim_12 3x5 w incorrectly by cm_12 3x5 w (presents)
+1 cim_12 3x5 w incorrectly by cm_12 3x5 w (absents)
 2 p52w_12 a incorrectly by p52w_6 a (absents)
 3 p52w_12 q incorrectly by p52w_6 q (absents)
 *************************************************/
 
 data testingportfolios;
 	set testingportfolios;
-	if _n_=68 then file="uploads/1/2/2/6/122679606/portf_me_cim_12_weekly_2019a.csv";
+	if _n_=68 then delete;
 	else if _n_=244 then delete;
 	else if _n_=245 then delete;
 run;
