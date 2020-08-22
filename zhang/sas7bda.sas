@@ -23,7 +23,7 @@ quit;
 
 %do i=1 %to %sysfunc(countw(&file.,%str( )));
 
-proc import file="!userprofile\desktop\zhang\csv\%scan(&file.,&i.,%str( ))" replace out=s.d%sysfunc(putn(&i.,z3.));
+proc import file="!userprofile\desktop\zhang\csv\%scan(&file.,&i.,%str( ))" replace out=s.d%sysfunc(putn(&i.,z4.));
 run;
 
 %end;
