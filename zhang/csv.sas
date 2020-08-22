@@ -21,14 +21,18 @@ option dlcreatedir;
 %let zhang=http://global-q.org/;
 
 proc sql noprint;
-	select url,file into :url separated by " ",:file separated by " " from factorstestingportfolios;
+	select n(url) into :i from factorstestingportfolios;
+quit;
+
+%do j=1 %to &i.;
+
+proc sql noprint;
+	select url,file into :url,:file from factorstestingportfolios(firstobs=&j.);
 run;
 
-%do i=1 %to %sysfunc(countw(&url.,%str( )));
+filename c "!userprofile\desktop\zhang\csv\&file.";
 
-filename c "!userprofile\desktop\zhang\csv\%scan(&file.,&i.,%str( ))";
-
-proc http url="&zhang.%scan(&url.,&i.,%str( ))" out=c;
+proc http url="&zhang.&url." out=c;
 run;
 
 %end;
