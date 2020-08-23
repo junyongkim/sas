@@ -3,7 +3,7 @@ libname p "!userprofile\desktop\pincette\pipe\";
 %http(pipe\MacroFinanceUncertainty_202006_update.zip,https://www.sydneyludvigson.com/s/MacroFinanceUncertainty_202006_update.zip)
 
 data _null_;
-	infile 'bandizip x -target:auto -y %userprofile%\desktop\pincette\pipe\MacroFinanceUncertainty_202006_update.zip' pipe;
+	infile 'bandizip x -o:%userprofile%\desktop\pincette\pipe\ -target:auto -y %userprofile%\desktop\pincette\pipe\MacroFinanceUncertainty_202006_update.zip' pipe;
 run;
 
 %import(pipe\MacroFinanceUncertainty_202006_update\MacroUncertaintyToCirculate.csv,csv,p.uncertaintymacro)
@@ -30,10 +30,10 @@ run;
 %http(pipe\SCS_managed_portfolios-monthly-05FEB2020.7z,https://drive.google.com/uc?id=19GkdT_HRsPs94dBJV5NnnmiAKVEOe1lI)
 
 data _null_;
-	infile 'bandizip x -target:auto -y %userprofile%\desktop\pincette\pipe\FT_portfolio_sorts-daily-05FEB2020.7z' pipe;
-	infile 'bandizip x -target:auto -y %userprofile%\desktop\pincette\pipe\FT_portfolio_sorts-monthly-05FEB2020.7z' pipe;
-	infile 'bandizip x -target:auto -y %userprofile%\desktop\pincette\pipe\SCS_managed_portfolios-daily-05FEB2020.7z' pipe;
-	infile 'bandizip x -target:auto -y %userprofile%\desktop\pincette\pipe\SCS_managed_portfolios-monthly-05FEB2020.7z' pipe;
+	infile 'bandizip x -o:%userprofile%\desktop\pincette\pipe\ -target:auto -y %userprofile%\desktop\pincette\pipe\FT_portfolio_sorts-daily-05FEB2020.7z' pipe;
+	infile 'bandizip x -o:%userprofile%\desktop\pincette\pipe\ -target:auto -y %userprofile%\desktop\pincette\pipe\FT_portfolio_sorts-monthly-05FEB2020.7z' pipe;
+	infile 'bandizip x -o:%userprofile%\desktop\pincette\pipe\ -target:auto -y %userprofile%\desktop\pincette\pipe\SCS_managed_portfolios-daily-05FEB2020.7z' pipe;
+	infile 'bandizip x -o:%userprofile%\desktop\pincette\pipe\ -target:auto -y %userprofile%\desktop\pincette\pipe\SCS_managed_portfolios-monthly-05FEB2020.7z' pipe;
 run;
 
 %macro pipe02(data,infile,input,date);
