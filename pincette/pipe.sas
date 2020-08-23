@@ -1,14 +1,14 @@
 libname p "!userprofile\desktop\pincette\pipe\";
 
-%http(pipe\MacroFinanceUncertainty_202002_update.zip,https://sydney-ludvigson.squarespace.com/s/MacroFinanceUncertainty_202002_update.zip)
+%http(pipe\MacroFinanceUncertainty_202006_update.zip,https://www.sydneyludvigson.com/s/MacroFinanceUncertainty_202006_update.zip)
 
 data _null_;
-	infile 'bandizip x -target:auto -y %userprofile%\desktop\pincette\pipe\MacroFinanceUncertainty_202002_update.zip' pipe;
+	infile 'bandizip x -target:auto -y %userprofile%\desktop\pincette\pipe\MacroFinanceUncertainty_202006_update.zip' pipe;
 run;
 
-%import(pipe\MacroFinanceUncertainty_202002_update\MacroUncertaintyToCirculate.csv,csv,p.uncertaintymacro)
-%import(pipe\MacroFinanceUncertainty_202002_update\RealUncertaintyToCirculate.csv,csv,p.uncertaintyreal)
-%import(pipe\MacroFinanceUncertainty_202002_update\FinancialUncertaintyToCirculate.csv,csv,p.uncertaintyfinancial)
+%import(pipe\MacroFinanceUncertainty_202006_update\MacroUncertaintyToCirculate.csv,csv,p.uncertaintymacro)
+%import(pipe\MacroFinanceUncertainty_202006_update\RealUncertaintyToCirculate.csv,csv,p.uncertaintyreal)
+%import(pipe\MacroFinanceUncertainty_202006_update\FinancialUncertaintyToCirculate.csv,csv,p.uncertaintyfinancial)
 
 %macro pipe01(data);
 
