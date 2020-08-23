@@ -19,7 +19,6 @@ run;
 2 p52w_12 a incorrectly by p52w_6 a (absents)
 3 p52w_12 q incorrectly by p52w_6 q (absents)
 *************************************************/
-
 data testingportfolios;
 	set testingportfolios;
 	if _n_=68 then delete;
