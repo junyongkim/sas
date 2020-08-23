@@ -14,7 +14,7 @@ run;
 
 data p.&data.;
 	set p.&data.;
-	date=100*year(date)+month(date);
+	date=100*year(datepart(date))+month(datepart(date));
 	format date;
 run;
 
