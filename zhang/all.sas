@@ -1,8 +1,7 @@
 /*************************************************
-zhang
-downloads all zhang data to desktop
-empty zhang in desktop before including this
-avoid _ as filename when including this
+folder %userprofile%\desktop\zhang\
+libname h c s a
+filename _ h t c
 *************************************************/
 option dlcreatedir;
 libname h "!userprofile\desktop\zhang\";

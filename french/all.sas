@@ -1,3 +1,8 @@
+/*************************************************
+folder %userprofile%\desktop\french\
+libname f z c s a
+filename _ h z c t
+*************************************************/
 option dlcreatedir;
 libname f "!userprofile\desktop\french\";
 libname f;

@@ -1,4 +1,4 @@
-libname p "!userprofile\desktop\pincette\pipe\";
+libname e "!userprofile\desktop\pincette\pipe\";
 
 %http(pipe\MacroFinanceUncertainty_202006_update.zip,https://www.sydneyludvigson.com/s/MacroFinanceUncertainty_202006_update.zip)
 
@@ -6,14 +6,14 @@ data _null_;
 	infile 'bandizip x -o:%userprofile%\desktop\pincette\pipe\ -target:auto -y %userprofile%\desktop\pincette\pipe\MacroFinanceUncertainty_202006_update.zip' pipe;
 run;
 
-%import(pipe\MacroFinanceUncertainty_202006_update\MacroUncertaintyToCirculate.csv,csv,p.uncertaintymacro)
-%import(pipe\MacroFinanceUncertainty_202006_update\RealUncertaintyToCirculate.csv,csv,p.uncertaintyreal)
-%import(pipe\MacroFinanceUncertainty_202006_update\FinancialUncertaintyToCirculate.csv,csv,p.uncertaintyfinancial)
+%import(pipe\MacroFinanceUncertainty_202006_update\MacroUncertaintyToCirculate.csv,csv,e.uncertaintymacro)
+%import(pipe\MacroFinanceUncertainty_202006_update\RealUncertaintyToCirculate.csv,csv,e.uncertaintyreal)
+%import(pipe\MacroFinanceUncertainty_202006_update\FinancialUncertaintyToCirculate.csv,csv,e.uncertaintyfinancial)
 
 %macro pipe01(data);
 
-data p.&data.;
-	set p.&data.;
+data e.&data.;
+	set e.&data.;
 	date=100*year(datepart(date))+month(datepart(date));
 	format date;
 run;
@@ -38,7 +38,7 @@ run;
 
 %macro pipe02(data,infile,input,date);
 
-data p.&data.(drop=q);
+data e.&data.(drop=q);
 	infile "dir /b /s %sysget(userprofile)\desktop\pincette\pipe\&infile." pipe;
 	input i $127.;
 	file=scan(i,-1,"\");
@@ -63,12 +63,12 @@ run;
 
 %macro pipe03(file,out,date);
 
-proc import file="!userprofile\desktop\pincette\pipe\&file." dbms=csv replace out=p.&out.;
+proc import file="!userprofile\desktop\pincette\pipe\&file." dbms=csv replace out=e.&out.;
 	guessingrows=max;
 run;
 
-data p.&out.;
-	set p.&out.;
+data e.&out.;
+	set e.&out.;
 	date=&date.;
 	format date;
 run;

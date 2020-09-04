@@ -14,10 +14,10 @@ data testingportfolios;
 run;
 
 /*************************************************
-200822 three errors
-1 cim_12 3x5 w incorrectly by cm_12 3x5 w (absents)
-2 p52w_12 a incorrectly by p52w_6 a (absents)
-3 p52w_12 q incorrectly by p52w_6 q (absents)
+200822 3 errors
+1 cim_12 3x5 w incorrectly by cm_12 3x5 w (absent)
+2 p52w_12 a incorrectly by p52w_6 a (absent)
+3 p52w_12 q incorrectly by p52w_6 q (absent)
 *************************************************/
 data testingportfolios;
 	set testingportfolios;

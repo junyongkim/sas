@@ -28,7 +28,7 @@ proc expand out=rs;
 	convert ss/tout=(movstd 22 trimleft 22);
 run;
 
-data fts;
+data boudryfts;
 	merge rb rs;
 	by date;
 	if nmiss(of _all_) then delete;
@@ -36,8 +36,8 @@ data fts;
 	ftr=(rb<-1.5*sb)*(rs>1.5*ss);
 run;
 
-data fts;
-	set fts;
+data boudryfts;
+	set boudryfts;
 	where fts or ftr;
 	display="fill";
 	if fts then fillcolor="red ";

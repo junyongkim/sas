@@ -45,7 +45,7 @@ data _null_;
 run;
 
 proc import file=t dbms=csv replace out=s.d%sysfunc(putn(&i.,z3.))(rename=(var1=date));
-	%if %sysfunc(find(%scan(&csv.,&i.," "),Breakpoints)) %then %do;getnames=no;%end;
+	%if %sysfunc(find(%scan(&csv.,&i.,%str( )),Breakpoints)) %then %do;getnames=no;%end;
 run;
 
 %end;
