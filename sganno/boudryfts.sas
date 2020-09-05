@@ -8,9 +8,9 @@ data rb;
 	sb=lag(rb);
 run;
 
-proc expand out=rb;
+proc expand method=none out=rb;
 	id date;
-	convert sb/tout=(movstd 22 trimleft 22);
+	convert sb/tout=(nomiss movstd 22 trimleft 22);
 run;
 
 filename c url "https://fred.stlouisfed.org/graph/fredgraph.csv?id=will5000indfc";
@@ -23,9 +23,9 @@ data rs;
 	ss=lag(rs);
 run;
 
-proc expand out=rs;
+proc expand method=none out=rs;
 	id date;
-	convert ss/tout=(movstd 22 trimleft 22);
+	convert ss/tout=(nomiss movstd 22 trimleft 22);
 run;
 
 data boudryfts;

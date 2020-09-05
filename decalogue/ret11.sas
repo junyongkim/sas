@@ -11,7 +11,7 @@ proc sql;
 		order by permno,date;
 quit;
 
-proc expand out=ret11(where=(ret11>.));
+proc expand method=none out=ret11(where=(ret11>.));
 	by permno;
 	id date;
 	convert ret11/tout=(+1 nomiss movprod 11 trimleft 10 -1);
