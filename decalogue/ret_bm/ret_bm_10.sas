@@ -1,4 +1,4 @@
-libname h "!userprofile\desktop\hello_wrds\ret_bm\";
+libname r "!userprofile\desktop\sas\decalogue\ret_bm\";
 
 rsubmit;
 
@@ -21,7 +21,7 @@ proc sql;
 		order by date;
 quit;
 
-proc download out=h.ret_bm_10;
+proc download out=r.ret_bm_10;
 run;
 
 endrsubmit;

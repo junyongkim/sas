@@ -4,7 +4,7 @@ proc sql;
 	create table d079 as
 		select a.*,r0,r1,r2,r3,r4,r5,r6,r7,r8,r9
 		from f.d079 a
-			join h.ret_ret11_10 b
+			join r.ret_ret11_10 b
 				on put(a.date,6.)=put(b.date,yymmn6.)
 		order by date;
 quit;

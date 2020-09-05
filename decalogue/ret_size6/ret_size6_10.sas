@@ -1,4 +1,4 @@
-libname h "!userprofile\desktop\hello_wrds\ret_size6\";
+libname r "!userprofile\desktop\sas\decalogue\ret_size6\";
 
 rsubmit;
 
@@ -20,7 +20,7 @@ proc sql;
 		order by date;
 quit;
 
-proc download out=h.ret_size6_10;
+proc download out=r.ret_size6_10;
 run;
 
 endrsubmit;
