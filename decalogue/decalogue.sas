@@ -26,6 +26,12 @@
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_10.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_10_d079.sas";
 
+%include "!userprofile\desktop\sas\decalogue\ret_ivol\ivol_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ivol\ivol_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ivol\ret_ivol.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ivol\ret_ivol_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ivol\ret_ivol_10_d105.sas";
+
 %include "!userprofile\desktop\sas\decalogue\ret_max\max_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_max\max_rank.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_max\ret_max.sas";
