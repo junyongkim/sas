@@ -11,10 +11,16 @@ proc sql;
 		order by permno,date;
 quit;
 
+proc printto log="/dev/null";
+run;
+
 proc reg noprint outest=ivol(keep=permno date _rmse_ rename=(_rmse_=ivol) where=(ivol>0));
 	by permno date;
 	model retrf=mktrf smb hml;
 quit;
+
+proc printto;
+run;
 
 proc datasets nolist;
 	modify ivol;
