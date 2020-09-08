@@ -5,6 +5,7 @@
 %include "!userprofile\desktop\sas\decalogue\bm_french.sas";
 %include "!userprofile\desktop\sas\decalogue\ret11.sas";
 /*%include "!userprofile\desktop\sas\decalogue\ret11_noexpand.sas";*/
+%include "!userprofile\desktop\sas\decalogue\ivol.sas";
 %include "!userprofile\desktop\sas\decalogue\max.sas";
 %include "!userprofile\desktop\sas\decalogue\exchcd.sas";
 
