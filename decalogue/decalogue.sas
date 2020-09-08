@@ -46,3 +46,9 @@
 %include "!userprofile\desktop\sas\decalogue\ret_size6_bm\ret_size6_bm_2x3_d018.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_size6_bm\ret_size6_bm_5x5.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_size6_bm\ret_size6_bm_5x5_d022.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_bm_ret11\bm_ret11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm_ret11\bm_ret11_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm_ret11\bm_ret11_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm_ret11\ret_bm_ret11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm_ret11\ret_bm_ret11_5x5.sas";
