@@ -5,6 +5,7 @@
 %include "!userprofile\desktop\sas\decalogue\bm_french.sas";
 %include "!userprofile\desktop\sas\decalogue\ret11.sas";
 /*%include "!userprofile\desktop\sas\decalogue\ret11_noexpand.sas";*/
+%include "!userprofile\desktop\sas\decalogue\beta60.sas";
 %include "!userprofile\desktop\sas\decalogue\ivol.sas";
 %include "!userprofile\desktop\sas\decalogue\max.sas";
 %include "!userprofile\desktop\sas\decalogue\exchcd.sas";
@@ -26,6 +27,12 @@
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_10.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_10_d079.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_beta60\beta60_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_beta60\beta60_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_beta60\ret_beta60.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_beta60\ret_beta60_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_beta60\ret_beta60_10_d099.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_ivol\ivol_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ivol\ivol_rank.sas";
