@@ -3,12 +3,12 @@ rsubmit;
 proc sql;
 	create table ivol as
 		select permno+0 as permno,
-			max(b.date) as date,
+			max(a.date) as date,
 			ret-rf as retrf,mktrf,smb,hml
 		from crsp.dsf a
 			full join ff.factors_daily b on a.date=b.date
-		group by permno,intnx("month",b.date,0)
-		having n(ret)=n(mktrf)
+		group by permno,intnx("month",a.date,0)
+		having n(ret)>17
 		order by permno,date;
 quit;
 

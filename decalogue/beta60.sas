@@ -14,7 +14,7 @@ proc sql;
 		from beta60 a
 			join beta60 b on a.permno=b.permno and b.dateff<=a.dateff<=intnx("month",b.dateff,59,"end")
 		group by a.permno,i
-		having n(retrf)=60
+		having n(retrf)>=24
 		order by permno,i;
 quit;
 
