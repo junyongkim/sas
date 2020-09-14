@@ -1,25 +1,24 @@
 rsubmit;
 
 proc sql;
-	create table size6_bm_breakpoint as
-		select date,size6,bm
-		from size6_bm a
+	create table op_ret11_breakpoint as
+		select date,op,ret11
+		from op_ret11 a
 			join exchcd(where=(exchcd=1)) b
 				on a.permno=b.permno and namedt<=date<=nameendt
 		order by date;
 quit;
 
 proc univariate noprint;
-	where bm>0;
 	by date;
-	var size6 bm;
-	output out=size6_bm_breakpoint
-		pctlpre=size6 bm
+	var op ret11;
+	output out=op_ret11_breakpoint
+		pctlpre=op ret11
 		pctlpts=10 20 30 40 50 60 70 80 90;
 run;
 
 proc datasets nolist;
-	modify size6_bm_breakpoint;
+	modify op_ret11_breakpoint;
 	attrib _all_ label=" ";
 run;
 

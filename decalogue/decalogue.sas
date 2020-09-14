@@ -4,6 +4,7 @@
 %include "!userprofile\desktop\sas\decalogue\bm.sas";
 %include "!userprofile\desktop\sas\decalogue\bm_french.sas";
 %include "!userprofile\desktop\sas\decalogue\op.sas";
+%include "!userprofile\desktop\sas\decalogue\in.sas";
 %include "!userprofile\desktop\sas\decalogue\ret11.sas";
 /*%include "!userprofile\desktop\sas\decalogue\ret11_noexpand.sas";*/
 %include "!userprofile\desktop\sas\decalogue\beta60.sas";
@@ -28,6 +29,12 @@
 %include "!userprofile\desktop\sas\decalogue\ret_op\ret_op.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_op\ret_op_10.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_op\ret_op_10_d012.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_in\in_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_in\in_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_in\ret_in.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_in\ret_in_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_in\ret_in_10_d015.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\ret11_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\ret11_rank.sas";
@@ -66,3 +73,15 @@
 %include "!userprofile\desktop\sas\decalogue\ret_bm_ret11\bm_ret11_rank.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_bm_ret11\ret_bm_ret11.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_bm_ret11\ret_bm_ret11_5x5.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_op_ret11\op_ret11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_op_ret11\op_ret11_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_op_ret11\op_ret11_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_op_ret11\ret_op_ret11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_op_ret11\ret_op_ret11_5x5.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_in_ret11\in_ret11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_in_ret11\in_ret11_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_in_ret11\in_ret11_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_in_ret11\ret_in_ret11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_in_ret11\ret_in_ret11_5x5.sas";

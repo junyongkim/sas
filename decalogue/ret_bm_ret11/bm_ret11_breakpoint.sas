@@ -10,7 +10,7 @@ proc sql;
 quit;
 
 proc univariate noprint;
-	where bm>0 and ret11>.;
+	where bm>0;
 	by date;
 	var bm ret11;
 	output out=bm_ret11_breakpoint
