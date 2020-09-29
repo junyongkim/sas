@@ -58,11 +58,11 @@ proc iml;
 	append;
 quit;
 
-proc export data=max replace file="!userprofile\desktop\max.csv";
+proc export data=max replace file="!userprofile\desktop\sas\yahoo\max.csv";
 run;
 
 ods results=off;
-ods listing gpath="!userprofile\desktop\";
+ods listing gpath="!userprofile\desktop\sas\yahoo\";
 ods graphics/reset imagename="front" width=1024px height=768px noborder;
 
 proc sgplot data=front noborder noautolegend;

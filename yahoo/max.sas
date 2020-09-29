@@ -15,7 +15,7 @@ run;
 filename i url "https://raw.githubusercontent.com/junyongkim/sas/master/sganno/usrecm.sas";
 %include i;
 ods results=off;
-ods listing gpath="!userprofile\desktop\";
+ods listing gpath="!userprofile\desktop\sas\yahoo\";
 ods graphics/reset imagename="max" width=1024px height=768px noborder;
 
 proc sgplot data=max sganno=usrecm(where=(&j.<=x1<=&k.)) noborder noautolegend;;
