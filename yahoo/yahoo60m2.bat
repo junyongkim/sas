@@ -1,15 +1,15 @@
 @echo off
 echo +------------------------------------------------+
-echo ! - yahoo60m.bat                                 !
-echo ! - yahoo60m.sas                                 !
+echo ! - yahoo60m2.bat                                !
+echo ! - yahoo60m2.sas                                !
 echo ! junyong                                        !
-echo ! 201002                                         !
+echo ! 201003                                         !
 echo +------------------------------------------------+
 echo ! these files use sas to download                !
 echo !  - 60 monthly stock returns                    !
-echo !  - market returns [sp 500]                     !
-echo !  - riskfree rates [tbill 13]                   !
-echo ! from yahoo to the desktop                      !
+echo !  - fama-french 3 factors [cons mktrf smb hml]  !
+echo !  - risk-free rates [rf]                        !
+echo ! from yahoo and french to the desktop           !
 echo +------------------------------------------------+
 echo ! please input                                   !
 echo !  - non-spaced FILENAME [ex. name_no_space]     !
@@ -21,7 +21,9 @@ echo ! - TYPE exit TO EXIT                            !
 echo ! - FOLLOW THE TYPING RULES TO AVOID ERRORS      !
 echo ! - LOCATE THE TWO FILES TO THE DESKTOP          !
 echo +------------------------------------------------+
+echo ! - THE LAST MONTH-END FACTORS ARE IMPOSSIBLE    !
+echo +------------------------------------------------+
 set /p f=file [ex. filename_without_space]=
 if "%f%"=="exit" (exit) else (set /p t=ticker [ex. ba dis ko]=)
 if "%t%"=="exit" (exit) else (set /p d=date [ex. 2oct2020]=)
-if "%d%"=="exit" (exit) else ("%programfiles%\sashome\sasfoundation\9.4\sas.exe" "%userprofile%\desktop\yahoo60m.sas" -set f '%f%' -set t '%t%' -set d '%d%' -nosplash -icon -nolog)
+if "%d%"=="exit" (exit) else ("%programfiles%\sashome\sasfoundation\9.4\sas.exe" "%userprofile%\desktop\yahoo60m2.sas" -set f '%f%' -set t '%t%' -set d '%d%' -nosplash -icon -nolog)
