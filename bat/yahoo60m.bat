@@ -17,10 +17,10 @@ echo +-------------------------------------------------------------------------+
 echo ! - TYPE exit TO EXIT                                                     !
 echo ! - FOLLOW THE TYPING RULES TO AVOID ERRORS                               !
 echo +-------------------------------------------------------------------------+
-set /p f=file [ex. filename_without_space]=
+set /p f=file [ex. hello world]=
 if "%f%"=="exit" (exit) else (set /p t=ticker [ex. ba dis ko]=)
 if "%t%"=="exit" (exit) else (set /p d=date [ex. 2oct2020]=)
 if "%d%"=="exit" (exit) else (^
   "%programfiles%\sashome\sasfoundation\9.4\sas.exe"^
-  "%userprofile%\desktop\sas\bat\yahoo60m.sas" -set f "%f%" -set t "%t%" -set d^
-  %d% -nosplash -icon -nolog)
+  "%userprofile%\desktop\sas\bat\yahoo60m.sas" -nosplash -icon -nolog -set f^
+  "%f%" -set t "%t%" -set d %d%)

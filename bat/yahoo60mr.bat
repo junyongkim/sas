@@ -17,7 +17,7 @@ echo +-------------------------------------------------------------------------+
 echo ! - TYPE exit TO EXIT                                                     !
 echo ! - FOLLOW THE TYPING RULES TO AVOID ERRORS                               !
 echo +-------------------------------------------------------------------------+
-set /p f=file [ex. filename_without_space]=
+set /p f=file [ex. hello world]=
 if "%f%"=="exit" (exit) else (set /p t=ticker [ex. ba dis ko]=)
 if "%t%"=="exit" (exit) else (set /p d=date [ex. 2020-10-03]=)
 if "%d%"=="exit" (exit) else (^
