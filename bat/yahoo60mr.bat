@@ -6,7 +6,7 @@ echo ! 201003                                                                  !
 echo +-------------------------------------------------------------------------+
 echo ! these files use R to download                                           !
 echo !  - 60 monthly stock returns                                             !
-echo !  - market returns [sp500], riskfree rates [tbill13]                     !
+echo !  - market returns [sp500], riskfree rates [tb13]                        !
 echo ! from yahoo to the desktop                                               !
 echo +-------------------------------------------------------------------------+
 echo ! to download the csv data, input                                         !

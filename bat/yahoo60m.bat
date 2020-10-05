@@ -6,7 +6,7 @@ echo ! 201002                                                                  !
 echo +-------------------------------------------------------------------------+
 echo ! these files use sas to download                                         !
 echo !  - 60 monthly stock returns                                             !
-echo !  - market returns [sp500], risk-free rates [tbill13]                    !
+echo !  - market returns [sp500], risk-free rates [tb13]                       !
 echo ! from yahoo to the desktop                                               !
 echo +-------------------------------------------------------------------------+
 echo ! to download the csv data, input                                         !
