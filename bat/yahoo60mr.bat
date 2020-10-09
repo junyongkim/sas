@@ -22,4 +22,4 @@ if "%f%"=="exit" (exit) else (set /p t=ticker [ex. ba dis ko]=)
 if "%t%"=="exit" (exit) else (set /p d=date [ex. 2020-10-03]=)
 if "%d%"=="exit" (exit) else (^
   "%userprofile%\desktop\apps\r-portable\app\r-portable\bin\rscript"^
-  "%userprofile%\desktop\yahoo60mr.R" "%f%" %d% %t%)
+  "%userprofile%\desktop\sas\bat\yahoo60mr.R" "%f%" %d% %t%)
