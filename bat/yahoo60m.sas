@@ -15,9 +15,9 @@ data i;
 		p=intnx("month","%sysget(d)"d,-61);
 		q=intnx("month","%sysget(d)"d,-1,"end");
 	end;
-	f=compress("https://query1.finance.yahoo.com/v7/finance/download/"||t||
-		"?period1="||dhms(p,0,0,0)-315619200||
-		'&period2='||dhms(q,23,59,59)-315619200||
+	f=cats("https://query1.finance.yahoo.com/v7/finance/download/",t,
+		"?period1=",dhms(p,0,0,0)-315619200,
+		'&period2=',dhms(q,23,59,59)-315619200,
 		'&interval=1mo');
 	infile _ url filevar=f firstobs=2 dsd end=e;
 	do until(e);
