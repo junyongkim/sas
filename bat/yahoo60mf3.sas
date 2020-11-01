@@ -6,7 +6,7 @@
 data i;
 	input @@;
 	_infile_=resolve(_infile_);
-	input t $ @@;
+	input t :$16. @@;
 	if "%sysget(d)"d=intnx("mon","%sysget(d)"d,0,"end") then do;
 		p=intnx("month","%sysget(d)"d,-60);
 		q="%sysget(d)"d;
