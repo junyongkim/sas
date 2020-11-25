@@ -10,6 +10,9 @@
 %include "!userprofile\desktop\sas\decalogue\beta60.sas";
 %include "!userprofile\desktop\sas\decalogue\ivol.sas";
 %include "!userprofile\desktop\sas\decalogue\max.sas";
+%include "!userprofile\desktop\sas\decalogue\bbgbdata.sas";
+%include "!userprofile\desktop\sas\decalogue\bbgbextend.sas";
+%include "!userprofile\desktop\sas\decalogue\bbgb60.sas";
 %include "!userprofile\desktop\sas\decalogue\exchcd.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_size6\size6_breakpoint.sas";
@@ -85,3 +88,10 @@
 %include "!userprofile\desktop\sas\decalogue\ret_in_ret11\in_ret11_rank.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_in_ret11\ret_in_ret11.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_in_ret11\ret_in_ret11_5x5.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\bbgb60_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\bbgb60_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_bbgb60.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_bbgb60_5x5.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_bb60_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_gb60_10.sas";
