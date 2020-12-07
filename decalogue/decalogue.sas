@@ -50,6 +50,9 @@
 %include "!userprofile\desktop\sas\decalogue\ret_beta60\ret_beta60.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_beta60\ret_beta60_10.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_beta60\ret_beta60_10_d099.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_beta60\ret_beta60_25.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_beta60\ret_beta60_50.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_beta60\ret_beta60_100.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_ivol\ivol_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ivol\ivol_rank.sas";
