@@ -44,6 +44,9 @@
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_10.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_10_d079.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_25.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_50.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_100.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_beta60\beta60_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_beta60\beta60_rank.sas";
