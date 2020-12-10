@@ -8,6 +8,10 @@
 %include "!userprofile\desktop\sas\decalogue\in.sas";
 %include "!userprofile\desktop\sas\decalogue\ret11.sas";
 /*%include "!userprofile\desktop\sas\decalogue\ret11_noexpand.sas";*/
+%include "!userprofile\desktop\sas\decalogue\ret5.sas";
+/*%include "!userprofile\desktop\sas\decalogue\ret5_noexpand.sas";*/
+%include "!userprofile\desktop\sas\decalogue\ret6.sas";
+/*%include "!userprofile\desktop\sas\decalogue\ret6_noexpand.sas";*/
 %include "!userprofile\desktop\sas\decalogue\beta60.sas";
 %include "!userprofile\desktop\sas\decalogue\ivol.sas";
 %include "!userprofile\desktop\sas\decalogue\max.sas";
@@ -51,11 +55,41 @@
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_100.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_10.sas";
-%include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_10_d079.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_10_d080.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_20.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_25.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_50.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_100.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\ret5_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\ret5_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\ret_ret5.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\ret_ret5_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\ret_ret5_20.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\ret_ret5_25.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\ret_ret5_50.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\ret_ret5_100.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\retd_ret5.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\retd_ret5_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\retd_ret5_20.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\retd_ret5_25.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\retd_ret5_50.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5\retd_ret5_100.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\ret6_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\ret6_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\ret_ret6.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\ret_ret6_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\ret_ret6_20.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\ret_ret6_25.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\ret_ret6_50.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\ret_ret6_100.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\retd_ret6.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\retd_ret6_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\retd_ret6_20.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\retd_ret6_25.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\retd_ret6_50.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret6\retd_ret6_100.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_beta60\beta60_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_beta60\beta60_rank.sas";
