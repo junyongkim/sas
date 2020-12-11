@@ -31,6 +31,10 @@
 %include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm_10.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm_10_d009.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm_20.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm_25.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm_50.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm_100.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_op\op_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_op\op_rank.sas";
