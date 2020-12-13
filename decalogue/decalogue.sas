@@ -157,3 +157,11 @@
 %include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_bbgb60_5x5.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_bb60_10.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_gb60_10.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\ret5_ret6.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\ret5_ret6_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\ret5_ret6_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\ret_ret5_ret6.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\ret_ret5_ret6_5x5.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\retd_ret5_ret6.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\retd_ret5_ret6_5x5.sas";
