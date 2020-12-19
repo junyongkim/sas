@@ -1,8 +1,8 @@
 rsubmit;
 
 %macro i;
-	%do j=%sysfunc(countw(&i,%str( ))) %to 1 %by -1;
-		when size6>size6%sysfunc(tranwrd(%sysfunc(putn(%scan(&i,&j,%str( )),best11.)),.,_)) then %scan(&i,&j,%str( ))
+	%do j=%sysfunc(countw(&i.,%str( ))) %to 1 %by -1;
+		when size6>size6%sysfunc(tranwrd(%sysfunc(putn(%scan(&i.,&j.,%str( )),best11.)),.,_)) then %scan(&i.,&j.,%str( ))
 	%end;
 %mend;
 

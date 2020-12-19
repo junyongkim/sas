@@ -39,6 +39,10 @@
 %include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm_25.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm_50.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm_100.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm\bm_zoom_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm\bm_zoom_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm_zoom.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bm\ret_bm_zoom_200.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_op\op_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_op\op_rank.sas";
@@ -68,6 +72,12 @@
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_25.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_50.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_100.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret11\ret11_zoom_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret11\ret11_zoom_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_zoom.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret11\ret_ret11_zoom_200.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_zoom.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_ret11\retd_ret11_zoom_200.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_ret5\ret5_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret5\ret5_rank.sas";

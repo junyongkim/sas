@@ -4,7 +4,7 @@ rsubmit;
 
 %macro i;
 	%do j=5 %to 200 %by 5;
-		,sum(ifn(size6<100/&j,size1,.)*ret)/sum(ifn(size6<100/&j,size1,.))-sum(ifn(size6>=100-100/&j,size1,.)*ret)/sum(ifn(size6>=100-100/&j,size1,.)) as s%sysfunc(putn(&j,z3.))
+		,sum(ifn(size6<100/&j.,size1,.)*ret)/sum(ifn(size6<100/&j.,size1,.))-sum(ifn(size6>=100-100/&j.,size1,.)*ret)/sum(ifn(size6>=100-100/&j.,size1,.)) as s%sysfunc(putn(&j.,z3.))
 	%end;
 %mend;
 
