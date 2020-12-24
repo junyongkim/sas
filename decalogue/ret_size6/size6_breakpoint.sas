@@ -13,9 +13,7 @@ proc univariate noprint;
 	where size6>0;
 	by date;
 	var size6;
-	output out=size6_breakpoint
-		pctlpre=size6
-		pctlpts=10 20 30 40 50 60 70 80 90;
+	output pctlpre=size6 pctlpts=1 to 99 out=size6_breakpoint;
 run;
 
 proc datasets nolist;
