@@ -25,6 +25,10 @@
 %include "!userprofile\desktop\sas\decalogue\ret_size6\ret_size6.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_size6\ret_size6_10.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_size6\ret_size6_10_d006.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_size6\ret_size6_20.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_size6\ret_size6_25.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_size6\ret_size6_50.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_size6\ret_size6_100.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_size6\size6_zoom_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_size6\size6_zoom_rank.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_size6\ret_size6_zoom.sas";
