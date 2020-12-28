@@ -18,6 +18,7 @@
 %include "!userprofile\desktop\sas\decalogue\bbgbdata.sas";
 %include "!userprofile\desktop\sas\decalogue\bbgbextend.sas";
 %include "!userprofile\desktop\sas\decalogue\bbgb60.sas";
+%include "!userprofile\desktop\sas\decalogue\siccodes.sas";
 %include "!userprofile\desktop\sas\decalogue\exchcd.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_size6\size6_breakpoint.sas";
@@ -142,6 +143,17 @@
 %include "!userprofile\desktop\sas\decalogue\ret_max\ret_max.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_max\ret_max_10.sas";
 
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\bbgb60_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\bbgb60_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_bbgb60.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_bb60_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_gb60_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_bbgb60_5x5.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_sic\ret_sic.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_sic\ret_sic_all.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_sic\ret_sic_all_d128.sas";
+
 %include "!userprofile\desktop\sas\decalogue\ret_size6_bm\size6_bm.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_size6_bm\size6_bm_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_size6_bm\size6_bm_rank.sas";
@@ -200,13 +212,6 @@
 %include "!userprofile\desktop\sas\decalogue\ret_in_ret11\retd_in_ret11.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_in_ret11\retd_in_ret11_5x5.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_in_ret11\retd_in_ret11_5x10.sas";
-
-%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\bbgb60_breakpoint.sas";
-%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\bbgb60_rank.sas";
-%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_bbgb60.sas";
-%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_bbgb60_5x5.sas";
-%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_bb60_10.sas";
-%include "!userprofile\desktop\sas\decalogue\ret_bbgb60\ret_gb60_10.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\ret5_ret6.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\ret5_ret6_breakpoint.sas";
