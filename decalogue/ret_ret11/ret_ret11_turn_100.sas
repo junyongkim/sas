@@ -1,0 +1,123 @@
+libname r "!userprofile\desktop\sas\decalogue\ret_ret11\";
+
+rsubmit;
+
+proc sql;
+	create table ret_ret11_turn_100 as
+		select a.*,b.size1 as size1_,b.ret11 as ret11_
+		from ret_ret11 a left join ret_ret11 b on a.permno=b.permno and
+			intnx("month",a.date,0)=intnx("month",b.date,-1);
+quit;
+
+proc sql undo_policy=none;
+	create table ret_ret11_turn_100 as
+		select date,
+			sum(ifn(ret11=0 and ret11_^=0,size1_,0))/sum(ifn(ret11=0,size1_,0)) as r00,
+			sum(ifn(ret11=1 and ret11_^=1,size1_,0))/sum(ifn(ret11=1,size1_,0)) as r01,
+			sum(ifn(ret11=2 and ret11_^=2,size1_,0))/sum(ifn(ret11=2,size1_,0)) as r02,
+			sum(ifn(ret11=3 and ret11_^=3,size1_,0))/sum(ifn(ret11=3,size1_,0)) as r03,
+			sum(ifn(ret11=4 and ret11_^=4,size1_,0))/sum(ifn(ret11=4,size1_,0)) as r04,
+			sum(ifn(ret11=5 and ret11_^=5,size1_,0))/sum(ifn(ret11=5,size1_,0)) as r05,
+			sum(ifn(ret11=6 and ret11_^=6,size1_,0))/sum(ifn(ret11=6,size1_,0)) as r06,
+			sum(ifn(ret11=7 and ret11_^=7,size1_,0))/sum(ifn(ret11=7,size1_,0)) as r07,
+			sum(ifn(ret11=8 and ret11_^=8,size1_,0))/sum(ifn(ret11=8,size1_,0)) as r08,
+			sum(ifn(ret11=9 and ret11_^=9,size1_,0))/sum(ifn(ret11=9,size1_,0)) as r09,
+			sum(ifn(ret11=10 and ret11_^=10,size1_,0))/sum(ifn(ret11=10,size1_,0)) as r10,
+			sum(ifn(ret11=11 and ret11_^=11,size1_,0))/sum(ifn(ret11=11,size1_,0)) as r11,
+			sum(ifn(ret11=12 and ret11_^=12,size1_,0))/sum(ifn(ret11=12,size1_,0)) as r12,
+			sum(ifn(ret11=13 and ret11_^=13,size1_,0))/sum(ifn(ret11=13,size1_,0)) as r13,
+			sum(ifn(ret11=14 and ret11_^=14,size1_,0))/sum(ifn(ret11=14,size1_,0)) as r14,
+			sum(ifn(ret11=15 and ret11_^=15,size1_,0))/sum(ifn(ret11=15,size1_,0)) as r15,
+			sum(ifn(ret11=16 and ret11_^=16,size1_,0))/sum(ifn(ret11=16,size1_,0)) as r16,
+			sum(ifn(ret11=17 and ret11_^=17,size1_,0))/sum(ifn(ret11=17,size1_,0)) as r17,
+			sum(ifn(ret11=18 and ret11_^=18,size1_,0))/sum(ifn(ret11=18,size1_,0)) as r18,
+			sum(ifn(ret11=19 and ret11_^=19,size1_,0))/sum(ifn(ret11=19,size1_,0)) as r19,
+			sum(ifn(ret11=20 and ret11_^=20,size1_,0))/sum(ifn(ret11=20,size1_,0)) as r20,
+			sum(ifn(ret11=21 and ret11_^=21,size1_,0))/sum(ifn(ret11=21,size1_,0)) as r21,
+			sum(ifn(ret11=22 and ret11_^=22,size1_,0))/sum(ifn(ret11=22,size1_,0)) as r22,
+			sum(ifn(ret11=23 and ret11_^=23,size1_,0))/sum(ifn(ret11=23,size1_,0)) as r23,
+			sum(ifn(ret11=24 and ret11_^=24,size1_,0))/sum(ifn(ret11=24,size1_,0)) as r24,
+			sum(ifn(ret11=25 and ret11_^=25,size1_,0))/sum(ifn(ret11=25,size1_,0)) as r25,
+			sum(ifn(ret11=26 and ret11_^=26,size1_,0))/sum(ifn(ret11=26,size1_,0)) as r26,
+			sum(ifn(ret11=27 and ret11_^=27,size1_,0))/sum(ifn(ret11=27,size1_,0)) as r27,
+			sum(ifn(ret11=28 and ret11_^=28,size1_,0))/sum(ifn(ret11=28,size1_,0)) as r28,
+			sum(ifn(ret11=29 and ret11_^=29,size1_,0))/sum(ifn(ret11=29,size1_,0)) as r29,
+			sum(ifn(ret11=30 and ret11_^=30,size1_,0))/sum(ifn(ret11=30,size1_,0)) as r30,
+			sum(ifn(ret11=31 and ret11_^=31,size1_,0))/sum(ifn(ret11=31,size1_,0)) as r31,
+			sum(ifn(ret11=32 and ret11_^=32,size1_,0))/sum(ifn(ret11=32,size1_,0)) as r32,
+			sum(ifn(ret11=33 and ret11_^=33,size1_,0))/sum(ifn(ret11=33,size1_,0)) as r33,
+			sum(ifn(ret11=34 and ret11_^=34,size1_,0))/sum(ifn(ret11=34,size1_,0)) as r34,
+			sum(ifn(ret11=35 and ret11_^=35,size1_,0))/sum(ifn(ret11=35,size1_,0)) as r35,
+			sum(ifn(ret11=36 and ret11_^=36,size1_,0))/sum(ifn(ret11=36,size1_,0)) as r36,
+			sum(ifn(ret11=37 and ret11_^=37,size1_,0))/sum(ifn(ret11=37,size1_,0)) as r37,
+			sum(ifn(ret11=38 and ret11_^=38,size1_,0))/sum(ifn(ret11=38,size1_,0)) as r38,
+			sum(ifn(ret11=39 and ret11_^=39,size1_,0))/sum(ifn(ret11=39,size1_,0)) as r39,
+			sum(ifn(ret11=40 and ret11_^=40,size1_,0))/sum(ifn(ret11=40,size1_,0)) as r40,
+			sum(ifn(ret11=41 and ret11_^=41,size1_,0))/sum(ifn(ret11=41,size1_,0)) as r41,
+			sum(ifn(ret11=42 and ret11_^=42,size1_,0))/sum(ifn(ret11=42,size1_,0)) as r42,
+			sum(ifn(ret11=43 and ret11_^=43,size1_,0))/sum(ifn(ret11=43,size1_,0)) as r43,
+			sum(ifn(ret11=44 and ret11_^=44,size1_,0))/sum(ifn(ret11=44,size1_,0)) as r44,
+			sum(ifn(ret11=45 and ret11_^=45,size1_,0))/sum(ifn(ret11=45,size1_,0)) as r45,
+			sum(ifn(ret11=46 and ret11_^=46,size1_,0))/sum(ifn(ret11=46,size1_,0)) as r46,
+			sum(ifn(ret11=47 and ret11_^=47,size1_,0))/sum(ifn(ret11=47,size1_,0)) as r47,
+			sum(ifn(ret11=48 and ret11_^=48,size1_,0))/sum(ifn(ret11=48,size1_,0)) as r48,
+			sum(ifn(ret11=49 and ret11_^=49,size1_,0))/sum(ifn(ret11=49,size1_,0)) as r49,
+			sum(ifn(ret11=50 and ret11_^=50,size1_,0))/sum(ifn(ret11=50,size1_,0)) as r50,
+			sum(ifn(ret11=51 and ret11_^=51,size1_,0))/sum(ifn(ret11=51,size1_,0)) as r51,
+			sum(ifn(ret11=52 and ret11_^=52,size1_,0))/sum(ifn(ret11=52,size1_,0)) as r52,
+			sum(ifn(ret11=53 and ret11_^=53,size1_,0))/sum(ifn(ret11=53,size1_,0)) as r53,
+			sum(ifn(ret11=54 and ret11_^=54,size1_,0))/sum(ifn(ret11=54,size1_,0)) as r54,
+			sum(ifn(ret11=55 and ret11_^=55,size1_,0))/sum(ifn(ret11=55,size1_,0)) as r55,
+			sum(ifn(ret11=56 and ret11_^=56,size1_,0))/sum(ifn(ret11=56,size1_,0)) as r56,
+			sum(ifn(ret11=57 and ret11_^=57,size1_,0))/sum(ifn(ret11=57,size1_,0)) as r57,
+			sum(ifn(ret11=58 and ret11_^=58,size1_,0))/sum(ifn(ret11=58,size1_,0)) as r58,
+			sum(ifn(ret11=59 and ret11_^=59,size1_,0))/sum(ifn(ret11=59,size1_,0)) as r59,
+			sum(ifn(ret11=60 and ret11_^=60,size1_,0))/sum(ifn(ret11=60,size1_,0)) as r60,
+			sum(ifn(ret11=61 and ret11_^=61,size1_,0))/sum(ifn(ret11=61,size1_,0)) as r61,
+			sum(ifn(ret11=62 and ret11_^=62,size1_,0))/sum(ifn(ret11=62,size1_,0)) as r62,
+			sum(ifn(ret11=63 and ret11_^=63,size1_,0))/sum(ifn(ret11=63,size1_,0)) as r63,
+			sum(ifn(ret11=64 and ret11_^=64,size1_,0))/sum(ifn(ret11=64,size1_,0)) as r64,
+			sum(ifn(ret11=65 and ret11_^=65,size1_,0))/sum(ifn(ret11=65,size1_,0)) as r65,
+			sum(ifn(ret11=66 and ret11_^=66,size1_,0))/sum(ifn(ret11=66,size1_,0)) as r66,
+			sum(ifn(ret11=67 and ret11_^=67,size1_,0))/sum(ifn(ret11=67,size1_,0)) as r67,
+			sum(ifn(ret11=68 and ret11_^=68,size1_,0))/sum(ifn(ret11=68,size1_,0)) as r68,
+			sum(ifn(ret11=69 and ret11_^=69,size1_,0))/sum(ifn(ret11=69,size1_,0)) as r69,
+			sum(ifn(ret11=70 and ret11_^=70,size1_,0))/sum(ifn(ret11=70,size1_,0)) as r70,
+			sum(ifn(ret11=71 and ret11_^=71,size1_,0))/sum(ifn(ret11=71,size1_,0)) as r71,
+			sum(ifn(ret11=72 and ret11_^=72,size1_,0))/sum(ifn(ret11=72,size1_,0)) as r72,
+			sum(ifn(ret11=73 and ret11_^=73,size1_,0))/sum(ifn(ret11=73,size1_,0)) as r73,
+			sum(ifn(ret11=74 and ret11_^=74,size1_,0))/sum(ifn(ret11=74,size1_,0)) as r74,
+			sum(ifn(ret11=75 and ret11_^=75,size1_,0))/sum(ifn(ret11=75,size1_,0)) as r75,
+			sum(ifn(ret11=76 and ret11_^=76,size1_,0))/sum(ifn(ret11=76,size1_,0)) as r76,
+			sum(ifn(ret11=77 and ret11_^=77,size1_,0))/sum(ifn(ret11=77,size1_,0)) as r77,
+			sum(ifn(ret11=78 and ret11_^=78,size1_,0))/sum(ifn(ret11=78,size1_,0)) as r78,
+			sum(ifn(ret11=79 and ret11_^=79,size1_,0))/sum(ifn(ret11=79,size1_,0)) as r79,
+			sum(ifn(ret11=80 and ret11_^=80,size1_,0))/sum(ifn(ret11=80,size1_,0)) as r80,
+			sum(ifn(ret11=81 and ret11_^=81,size1_,0))/sum(ifn(ret11=81,size1_,0)) as r81,
+			sum(ifn(ret11=82 and ret11_^=82,size1_,0))/sum(ifn(ret11=82,size1_,0)) as r82,
+			sum(ifn(ret11=83 and ret11_^=83,size1_,0))/sum(ifn(ret11=83,size1_,0)) as r83,
+			sum(ifn(ret11=84 and ret11_^=84,size1_,0))/sum(ifn(ret11=84,size1_,0)) as r84,
+			sum(ifn(ret11=85 and ret11_^=85,size1_,0))/sum(ifn(ret11=85,size1_,0)) as r85,
+			sum(ifn(ret11=86 and ret11_^=86,size1_,0))/sum(ifn(ret11=86,size1_,0)) as r86,
+			sum(ifn(ret11=87 and ret11_^=87,size1_,0))/sum(ifn(ret11=87,size1_,0)) as r87,
+			sum(ifn(ret11=88 and ret11_^=88,size1_,0))/sum(ifn(ret11=88,size1_,0)) as r88,
+			sum(ifn(ret11=89 and ret11_^=89,size1_,0))/sum(ifn(ret11=89,size1_,0)) as r89,
+			sum(ifn(ret11=90 and ret11_^=90,size1_,0))/sum(ifn(ret11=90,size1_,0)) as r90,
+			sum(ifn(ret11=91 and ret11_^=91,size1_,0))/sum(ifn(ret11=91,size1_,0)) as r91,
+			sum(ifn(ret11=92 and ret11_^=92,size1_,0))/sum(ifn(ret11=92,size1_,0)) as r92,
+			sum(ifn(ret11=93 and ret11_^=93,size1_,0))/sum(ifn(ret11=93,size1_,0)) as r93,
+			sum(ifn(ret11=94 and ret11_^=94,size1_,0))/sum(ifn(ret11=94,size1_,0)) as r94,
+			sum(ifn(ret11=95 and ret11_^=95,size1_,0))/sum(ifn(ret11=95,size1_,0)) as r95,
+			sum(ifn(ret11=96 and ret11_^=96,size1_,0))/sum(ifn(ret11=96,size1_,0)) as r96,
+			sum(ifn(ret11=97 and ret11_^=97,size1_,0))/sum(ifn(ret11=97,size1_,0)) as r97,
+			sum(ifn(ret11=98 and ret11_^=98,size1_,0))/sum(ifn(ret11=98,size1_,0)) as r98,
+			sum(ifn(ret11=99 and ret11_^=99,size1_,0))/sum(ifn(ret11=99,size1_,0)) as r99
+		from ret_ret11_turn_100
+		group by date
+		order by date;
+quit;
+
+proc download out=r.ret_ret11_turn_100;
+run;
+
+endrsubmit;
