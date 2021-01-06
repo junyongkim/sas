@@ -12,6 +12,7 @@
 /*%include "!userprofile\desktop\sas\decalogue\ret5_noexpand.sas";*/
 %include "!userprofile\desktop\sas\decalogue\ret6.sas";
 /*%include "!userprofile\desktop\sas\decalogue\ret6_noexpand.sas";*/
+%include "!userprofile\desktop\sas\decalogue\res11.sas";
 %include "!userprofile\desktop\sas\decalogue\beta60.sas";
 %include "!userprofile\desktop\sas\decalogue\ivol.sas";
 %include "!userprofile\desktop\sas\decalogue\max.sas";
@@ -125,6 +126,19 @@
 %include "!userprofile\desktop\sas\decalogue\ret_ret6\retd_ret6_25.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret6\retd_ret6_50.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret6\retd_ret6_100.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_res11\res11_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\res11_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\ret_res11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\ret_res11_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\retd_res11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\retd_res11_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\res11_zoom_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\res11_zoom_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\ret_res11_zoom.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\ret_res11_zoom_200.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\retd_res11_zoom.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\retd_res11_zoom_200.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_beta60\beta60_breakpoint.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_beta60\beta60_rank.sas";
