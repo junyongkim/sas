@@ -133,6 +133,9 @@
 %include "!userprofile\desktop\sas\decalogue\ret_res11\res11_rank.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_res11\ret_res11.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_res11\ret_res11_10.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\ret_res11_25.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\ret_res11_50.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_res11\ret_res11_100.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_res11\retd_res11.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_res11\retd_res11_10.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_res11\res11_zoom_breakpoint.sas";
