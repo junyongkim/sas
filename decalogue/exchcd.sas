@@ -8,6 +8,7 @@ proc sql;
 			exchcd+0 as exchcd
 		from crsp.msenames
 			where shrcd in (10,11)
+		group by permno
 		order by permno,namedt;
 quit;
 
