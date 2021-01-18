@@ -1,0 +1,19 @@
+libname d "!userprofile\desktop\sas\decalogue2\ret11";
+rsubmit;
+
+proc sql;
+	create table d.reu_ret11_010 as select
+	date+0 as date length=4 format=yymmddn8.
+	,sum(ifn(ret11=-2,value,0)*ret)/sum(ifn(ret11=-2,value,0)) as rx
+		format=best8.
+	%r(10,ret11,z1.)
+	,sum((ret11=-2)*ret)/sum(ret11=-2) as sx format=best8.
+	%s(10,ret11,z1.) from
+	reu_ret11
+	group by date order by date;
+quit;
+
+proc download out=d.reu_ret11_010;
+run;
+
+endrsubmit;

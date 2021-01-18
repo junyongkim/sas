@@ -13,10 +13,10 @@ proc sql;
 	,sum(ifn(bm=-2,1,.)) as nx length=3 format=best8.
 	,sum(ifn(bm=-1,1,.)) as nn length=3 format=best8.
 	%n(10,bm,z1.)
-	,sum(ifn(bm=-2 & bm1^=-2,value1,0))
-		/sum(ifn(bm=-2,value1,0)) as tx format=best8.
-	,sum(ifn(bm=-1 & bm1^=-1,value1,0))
-		/sum(ifn(bm=-1,value1,0)) as tn format=best8.
+	,sum(ifn(bm=-2 & bm1^=-2,value1,0))/sum(ifn(bm=-2,value1,0)) as tx
+		format=best8.
+	,sum(ifn(bm=-1 & bm1^=-1,value1,0))/sum(ifn(bm=-1,value1,0)) as tn
+		format=best8.
 	%t(10,bm,z1.)
 	,sum(bm=-2 & bm1^=-2)/sum(bm=-2) as ux format=best8.
 	,sum(bm=-1 & bm1^=-1)/sum(bm=-1) as un format=best8.
