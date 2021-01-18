@@ -1,6 +1,6 @@
 rsubmit;
 
-data j;
+data i;
 	set crsp.msenames;
 	where 10<=shrcd<=11;
 	by permno namedt;
