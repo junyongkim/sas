@@ -1,4 +1,4 @@
-libname d "!userprofile\desktop\decalogue2\bm";
+libname d "!userprofile\desktop\sas\decalogue2\bm";
 rsubmit;
 
 proc sql;
