@@ -3,7 +3,7 @@ rsubmit;
 
 proc sql;
 	create table d.zoom_reu_ret11_200 as select
-	date+0 as date length=4 format=yymmddn8.
+	date+0 as date format=yymmddn8.
 	%zoom_r(ret11)
 	%zoom_s(ret11) from
 	zoom_reu_ret11

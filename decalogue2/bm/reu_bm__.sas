@@ -5,7 +5,7 @@ rsubmit;
 
 proc sql;
 	create table d.reu_bm_%sysfunc(putn(&n,z3.)) as select
-	date+0 as date length=4 format=yymmddn8.
+	date+0 as date format=yymmddn8.
 	,sum(ifn(bm=-2,value,0)*ret)/sum(ifn(bm=-2,value,0)) as rx format=best8.
 	,sum(ifn(bm=-1,value,0)*ret)/sum(ifn(bm=-1,value,0)) as rn format=best8.
 	%r(&n,bm,&putn)

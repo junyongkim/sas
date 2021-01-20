@@ -34,6 +34,12 @@ rsubmit; %reu_bm_(25,z2.); endrsubmit;
 rsubmit; %reu_bm_(50,z2.); endrsubmit;
 rsubmit; %reu_bm_(100,z2.); endrsubmit;
 rsubmit; %reu_bm_(200,z3.); endrsubmit;
+%include "!userprofile\desktop\sas\decalogue2\bm\zoom_pctl_bm.sas";
+%include "!userprofile\desktop\sas\decalogue2\bm\zoom_rank_bm.sas";
+%include "!userprofile\desktop\sas\decalogue2\bm\zoom_ret_bm.sas";
+%include "!userprofile\desktop\sas\decalogue2\bm\zoom_ret_bm_200.sas";
+%include "!userprofile\desktop\sas\decalogue2\bm\zoom_reu_bm.sas";
+%include "!userprofile\desktop\sas\decalogue2\bm\zoom_reu_bm_200.sas";
 
 %include "!userprofile\desktop\sas\decalogue2\ret11\_ret11.sas";
 %include "!userprofile\desktop\sas\decalogue2\ret11\pctl_ret11.sas";

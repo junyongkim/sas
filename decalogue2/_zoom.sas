@@ -47,4 +47,22 @@ quit;
 	%end;
 %mend;
 
+%macro zoom_t(var);
+	%do j=5 %to 200 %by 5;
+		,sum(ifn(&var>=100-100/&j & &var.1^>=100-100/&j,value1,0))
+			/sum(ifn(&var>=100-100/&j,value1,0))
+			+sum(ifn(&var<100/&j & (&var.1=. | &var.1^<100/&j),value1,0))
+			/sum(ifn(&var<100/&j,value1,0)) as t%sysfunc(putn(&j,z3.))
+			format=best8.
+	%end;
+%mend;
+
+%macro zoom_u(var);
+	%do j=5 %to 200 %by 5;
+		,sum(&var>=100-100/&j & &var.1^>=100-100/&j)/sum(&var>=100-100/&j)
+			+sum(&var<100/&j & (&var.1=. | &var.1^<100/&j))/sum(&var<100/&j) as
+			u%sysfunc(putn(&j,z3.)) format=best8.
+	%end;
+%mend;
+
 endrsubmit;

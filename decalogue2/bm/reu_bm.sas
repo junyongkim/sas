@@ -5,7 +5,7 @@ proc sql;
 	i.*,
 	coalesce(bm,-2) as bm from
 	d.reu i left join
-	rank_bm j on permno=lpermno & intnx("year.7",date,0)
+	rank_bm on permno=lpermno & intnx("year.7",date,0)
 		=intnx("month",intnx("year.6",datadate,1),1);
 quit;
 

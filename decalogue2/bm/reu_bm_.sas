@@ -5,7 +5,7 @@ rsubmit;
 
 proc sql;
 	create table i as select
-	date+0 as date length=4 format=yymmddn8.,
+	date+0 as date format=yymmddn8.,
 	ret format=best8.,
 	value,
 	case when bm>-1 then put(floor(bm*&n/100),&putn) when bm=-1 then "n" else

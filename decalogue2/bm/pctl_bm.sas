@@ -10,7 +10,7 @@ proc sql;
 quit;
 
 proc univariate noprint;
-	where bm>0;
+	where bm^<0;
 	by datadate;
 	var bm;
 	output pctlpre=bm pctlpts=0.5 to 99.5 by 0.5 out=pctl_bm;

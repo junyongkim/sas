@@ -5,13 +5,13 @@ rsubmit;
 
 proc sql;
 	create table d.ret_ret11_%sysfunc(putn(&n,z3.)) as select
-	date+0 as date length=4 format=yymmddn8.
+	date+0 as date format=yymmddn8.
 	,sum(ifn(ret11=-2,value,0)*ret)/sum(ifn(ret11=-2,value,0)) as rx
 		format=best8.
 	%r(&n,ret11,&putn)
 	,sum((ret11=-2)*ret)/sum(ret11=-2) as sx format=best8.
 	%s(&n,ret11,&putn)
-	,sum(ifn(ret11=-2,1,.)) as nx length=3 format=best8.
+	,sum(ifn(ret11=-2,1,.)) as nx format=best8.
 	%n(&n,ret11,&putn)
 	,sum(ifn(ret11=-2 & ret111^=-2,value1,0))/sum(ifn(ret11=-2,value1,0)) as tx
 		format=best8.
