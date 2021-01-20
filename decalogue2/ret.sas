@@ -8,7 +8,7 @@ proc sql;
 	abs(prc)*shrout as value1,
 	case when dlret then calculated value1 else calculated value1
 		/(1+calculated ret) end as value from
-	crsp.msf(where=(ret>.z & prc>. & shrout)) i left join
+	crsp.msf(where=(ret>.z & prc & shrout)) i left join
 	crsp.msedelist j on i.permno=j.permno &
 		intnx("month",date,0)=intnx("month",dlstdt,0);
 quit;
