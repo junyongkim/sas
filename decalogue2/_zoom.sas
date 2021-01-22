@@ -15,17 +15,17 @@ quit;
 %macro zoom_r(var,i);
 	%if &i= %then %do;
 		%do j=5 %to 200 %by 5;
-			,sum(ifn(&var>=100-100/&j,value,0)*ret)
-				/sum(ifn(&var>=100-100/&j,value,0))
-				-sum(ifn(&var<100/&j,value,0)*ret)/sum(ifn(&var<100/&j,value,0))
+			,sum(ifn(&var>=100-100/&j,val,0)*ret)
+				/sum(ifn(&var>=100-100/&j,val,0))
+				-sum(ifn(&var<100/&j,val,0)*ret)/sum(ifn(&var<100/&j,val,0))
 				as r%sysfunc(putn(&j,z3.)) format=best8.
 		%end;
 	%end;
 	%else %do;
 		%do j=5 %to 200 %by 5;
-			,sum(ifn(&var<100/&j,value,0)*ret)/sum(ifn(&var<100/&j,value,0))
-				-sum(ifn(&var>=100-100/&j,value,0)*ret)
-				/sum(ifn(&var>=100-100/&j,value,0)) as r%sysfunc(putn(&j,z3.))
+			,sum(ifn(&var<100/&j,val,0)*ret)/sum(ifn(&var<100/&j,val,0))
+				-sum(ifn(&var>=100-100/&j,val,0)*ret)
+				/sum(ifn(&var>=100-100/&j,val,0)) as r%sysfunc(putn(&j,z3.))
 				format=best8.
 		%end;
 	%end;
@@ -49,10 +49,10 @@ quit;
 
 %macro zoom_t(var);
 	%do j=5 %to 200 %by 5;
-		,sum(ifn(&var>=100-100/&j & &var.1^>=100-100/&j,value1,0))
-			/sum(ifn(&var>=100-100/&j,value1,0))
-			+sum(ifn(&var<100/&j & (&var.1=. | &var.1^<100/&j),value1,0))
-			/sum(ifn(&var<100/&j,value1,0)) as t%sysfunc(putn(&j,z3.))
+		,sum(ifn(&var>=100-100/&j & &var.1^>=100-100/&j,val1,0))
+			/sum(ifn(&var>=100-100/&j,val1,0))
+			+sum(ifn(&var<100/&j & (&var.1=. | &var.1^<100/&j),val1,0))
+			/sum(ifn(&var<100/&j,val1,0)) as t%sysfunc(putn(&j,z3.))
 			format=best8.
 	%end;
 %mend;

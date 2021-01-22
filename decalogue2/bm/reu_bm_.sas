@@ -7,7 +7,7 @@ proc sql;
 	create table i as select
 	date+0 as date format=yymmddn8.,
 	ret format=best8.,
-	value,
+	val,
 	case when bm>-1 then put(floor(bm*&n/100),&putn) when bm=-1 then "n" else
 		"x" end as i from
 	reu_bm
@@ -29,7 +29,7 @@ run;
 proc summary data=i;
 	by date i;
 	var ret;
-	weight value;
+	weight val;
 	output mean= out=i;
 run;
 

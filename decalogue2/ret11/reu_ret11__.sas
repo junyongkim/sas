@@ -6,8 +6,7 @@ rsubmit;
 proc sql;
 	create table d.reu_ret11_%sysfunc(putn(&n,z3.)) as select
 	date+0 as date format=yymmddn8.
-	,sum(ifn(ret11=-2,value,0)*ret)/sum(ifn(ret11=-2,value,0)) as rx
-		format=best8.
+	,sum(ifn(ret11=-2,val,0)*ret)/sum(ifn(ret11=-2,val,0)) as rx format=best8.
 	%r(&n,ret11,&putn)
 	,sum((ret11=-2)*ret)/sum(ret11=-2) as sx format=best8.
 	%s(&n,ret11,&putn) from

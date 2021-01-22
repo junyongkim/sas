@@ -32,7 +32,7 @@ proc sql undo_policy=none;
 	create table d.bm as select
 	coalesce(lpermno,i.permno) as lpermno,
 	coalesce(datadate,mdy(5,31,year)) as datadate,
-	coalesce(bm,be/value1*1000) as bm from
+	coalesce(bm,be/val1*1000) as bm from
 	d.bm full join
 	i on lpermno=permno & year(intnx("year.6",datadate,1))=year full join
 	d.ret(where=(month(date)=6)) j on i.permno=j.permno & year=year(date)
