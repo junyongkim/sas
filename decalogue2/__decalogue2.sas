@@ -2,6 +2,7 @@
 %include "!userprofile\desktop\sas\decalogue2\_n.sas";
 %include "!userprofile\desktop\sas\decalogue2\_r.sas";
 %include "!userprofile\desktop\sas\decalogue2\_rank.sas";
+%include "!userprofile\desktop\sas\decalogue2\_reg.sas";
 %include "!userprofile\desktop\sas\decalogue2\_s.sas";
 %include "!userprofile\desktop\sas\decalogue2\_t.sas";
 %include "!userprofile\desktop\sas\decalogue2\_u.sas";
@@ -71,3 +72,6 @@ rsubmit; %reu_ret11_(200,z3.); endrsubmit;
 %include "!userprofile\desktop\sas\decalogue2\ret11\zoom_reu_ret11.sas";
 %include "!userprofile\desktop\sas\decalogue2\ret11\zoom_reu_ret11_200.sas";
 %include "!userprofile\desktop\sas\decalogue2\ret11\zzcuprod_ret11.sas";
+
+%include "!userprofile\desktop\sas\decalogue2\zjoin.sas"
+%include "!userprofile\desktop\sas\decalogue2\zreg.sas"
