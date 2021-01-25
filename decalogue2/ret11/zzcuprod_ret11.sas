@@ -21,12 +21,7 @@ proc sql undo_policy=none;
 	sum((ret11>=90 | ret11<10)*val*ret)/sum((ret11>=90 | ret11<10)*val) as r010,
 	sum((ret11>=96 | ret11<4)*val*ret)/sum((ret11>=96 | ret11<4)*val) as r025,
 	sum((ret11>=98 | ret11<2)*val*ret)/sum((ret11>=98 | ret11<2)*val) as r050,
-	sum((ret11>=99 | ret11<1)*val*ret)/sum((ret11>=99 | ret11<1)*val) as r100,
-	sum((ret11>=80 | ret11<20)*ret)/sum(ret11>=80 | ret11<20) as s005,
-	sum((ret11>=90 | ret11<10)*ret)/sum(ret11>=90 | ret11<10) as s010,
-	sum((ret11>=96 | ret11<4)*ret)/sum(ret11>=96 | ret11<4) as s025,
-	sum((ret11>=98 | ret11<2)*ret)/sum(ret11>=98 | ret11<2) as s050,
-	sum((ret11>=99 | ret11<1)*ret)/sum(ret11>=99 | ret11<1) as s100 from
+	sum((ret11>=99 | ret11<1)*val*ret)/sum((ret11>=99 | ret11<1)*val) as r100 from
 	cuprod_ret11
 	group by intck,ifn(ret11>=50,1,-1),date order by intck,ret11,date;
 quit;
@@ -39,11 +34,6 @@ proc expand method=none out=cuprod_ret11;
 	convert r025/tout=(+1 cuprod -1);
 	convert r050/tout=(+1 cuprod -1);
 	convert r100/tout=(+1 cuprod -1);
-	convert s005/tout=(+1 cuprod -1);
-	convert s010/tout=(+1 cuprod -1);
-	convert s025/tout=(+1 cuprod -1);
-	convert s050/tout=(+1 cuprod -1);
-	convert s100/tout=(+1 cuprod -1);
 run;
 
 proc sql undo_policy=none;
@@ -54,12 +44,7 @@ proc sql undo_policy=none;
 	sum(ret11*r010) as r010,
 	sum(ret11*r025) as r025,
 	sum(ret11*r050) as r050,
-	sum(ret11*r100) as r100,
-	sum(ret11*s005) as s005,
-	sum(ret11*s010) as s010,
-	sum(ret11*s025) as s025,
-	sum(ret11*s050) as s050,
-	sum(ret11*s100) as s100 from
+	sum(ret11*r100) as r100 from
 	cuprod_ret11
 	group by intck("month",intck,date),date;
 quit;
@@ -81,22 +66,7 @@ proc sql undo_policy=none;
 	avg(r050)+2*stderr(r050) as hir050,
 	avg(r100)-2*stderr(r100) as lor100,
 	avg(r100) as r100,
-	avg(r100)+2*stderr(r100) as hir100,
-	avg(s005)-2*stderr(s005) as los005,
-	avg(s005) as s005,
-	avg(s005)+2*stderr(s005) as his005,
-	avg(s010)-2*stderr(s010) as los010,
-	avg(s010) as s010,
-	avg(s010)+2*stderr(s010) as his010,
-	avg(s025)-2*stderr(s025) as los025,
-	avg(s025) as s025,
-	avg(s025)+2*stderr(s025) as his025,
-	avg(s050)-2*stderr(s050) as los050,
-	avg(s050) as s050,
-	avg(s050)+2*stderr(s050) as his050,
-	avg(s100)-2*stderr(s100) as los100,
-	avg(s100) as s100,
-	avg(s100)+2*stderr(s100) as his100 from
+	avg(r100)+2*stderr(r100) as hir100 from
 	cuprod_ret11
 	group by intck order by intck;
 quit;
