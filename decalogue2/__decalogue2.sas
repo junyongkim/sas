@@ -73,5 +73,5 @@ rsubmit; %reu_ret11_(200,z3.); endrsubmit;
 %include "!userprofile\desktop\sas\decalogue2\ret11\zoom_reu_ret11_200.sas";
 %include "!userprofile\desktop\sas\decalogue2\ret11\zzcuprod_ret11.sas";
 
-%include "!userprofile\desktop\sas\decalogue2\zjoin.sas"
-%include "!userprofile\desktop\sas\decalogue2\zreg.sas"
+%include "!userprofile\desktop\sas\decalogue2\zjoin.sas";
+%include "!userprofile\desktop\sas\decalogue2\zreg.sas";

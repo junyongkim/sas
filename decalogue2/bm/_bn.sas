@@ -36,7 +36,8 @@ proc sql undo_policy=none;
 	d.bm full join
 	i on lpermno=permno & year(intnx("year.6",datadate,1))=year full join
 	d.ret(where=(month(date)=6)) j on i.permno=j.permno & year=year(date)
-	having bm>.;
+	group by coalesce(lpermno,i.permno),coalesce(datadate,mdy(5,31,year)) having
+		bm>. & datadate=max(datadate);
 quit;
 
 endrsubmit;

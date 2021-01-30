@@ -10,7 +10,8 @@ proc sql;
 		i join
 	crsp.ccmxpf_lnkhist(where=(linkprim in ("P","C") & linktype in ("LC","LU")))
 		j on i.gvkey=j.gvkey & linkdt<=datadate<=coalesce(linkenddt,2**21)
-	having bm>.;
+	group by lpermno,intnx("year.6",datadate,0) having bm>. &
+		datadate=max(datadate);
 quit;
 
 endrsubmit;
