@@ -22,6 +22,7 @@
 %include "!userprofile\desktop\sas\decalogue\bbgbextend.sas";
 %include "!userprofile\desktop\sas\decalogue\bbgb60.sas";
 %include "!userprofile\desktop\sas\decalogue\siccodes.sas";
+%include "!userprofile\desktop\sas\decalogue\cshr.sas";
 %include "!userprofile\desktop\sas\decalogue\exchcd.sas";
 
 %include "!userprofile\desktop\sas\decalogue\ret_size6\size6_breakpoint.sas";
@@ -281,3 +282,15 @@
 %include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\ret_ret5_ret6_5x5.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\retd_ret5_ret6.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_ret5_ret6\retd_ret5_ret6_5x5.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_cshr\cshr_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_cshr\cshr_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_cshr\ret_cshr.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_cshr\ret_cshr_10.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_cshr_ret11\cshr_ret11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_cshr_ret11\cshr_ret11_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_cshr_ret11\cshr_ret11_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_cshr_ret11\ret_cshr_ret11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_cshr_ret11\ret_cshr_ret11_5x5.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_cshr_ret11\ret_cshr_ret11_5x10.sas";
