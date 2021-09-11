@@ -300,4 +300,10 @@
 %include "!userprofile\desktop\sas\decalogue\ret_sinkinson\sinkinson_rank.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_sinkinson\ret_sinkinson.sas";
 %include "!userprofile\desktop\sas\decalogue\ret_sinkinson\ret_sinkinson_10.sas";
-%include "!userprofile\desktop\sas\decalogue\ret_sinkinson\ret_sinkinson_10_n.sas";
+
+%include "!userprofile\desktop\sas\decalogue\ret_sinkinson_ret11\sinkinson_ret11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_sinkinson_ret11\sinkinson_ret11_breakpoint.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_sinkinson_ret11\sinkinson_ret11_rank.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_sinkinson_ret11\ret_sinkinson_ret11.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_sinkinson_ret11\ret_sinkinson_ret11_5x5.sas";
+%include "!userprofile\desktop\sas\decalogue\ret_sinkinson_ret11\ret_sinkinson_ret11_5x10.sas";
