@@ -18,4 +18,4 @@ echo +-------------------------------------------------------------------------+
 set /p i=file [ex. disney]? 
 if "%i%"=="exit" (exit) else (set /p j=ticker [ex. dis]? )
 if "%j%"=="exit" (exit) else (set /p k=output [ex. 1mo 1wk 1d]? )
-if "%k%"=="exit" (exit) else ("%userprofile%\desktop\apps\curl-7.72.0-win64-mingw\bin\curl.exe" "https://query1.finance.yahoo.com/v7/finance/download/%j%?period1=-2177452800&period2=4133980799&interval=%k%" --output "%userprofile%\desktop\%i%.csv")
+if "%k%"=="exit" (exit) else ("%userprofile%\desktop\apps\curl-7.79.1-win64-mingw\bin\curl.exe" "https://query1.finance.yahoo.com/v7/finance/download/%j%?period1=-2177452800&period2=4133980799&interval=%k%" --output "%userprofile%\desktop\%i%.csv")
