@@ -1,12 +1,21 @@
 /*-----------------------------------------------------------------------------+
 | yahoo61m.bat, yahoo61m.sas                                                   |
 | junyong                                                                      |
-| 201011                                                                       |
+| 211101                                                                       |
 +-----------------------------------------------------------------------------*/
 data i;
-	input @@;
-	_infile_=resolve(_infile_);
-	input t :$16. @@;
+	length t $16;
+	do i=-1 to countw("%sysget(t)"," ");
+		if i=-1 then t="^gspc";
+		else if i=0 then t="^irx";
+		else t=scan("%sysget(t)",i," ");
+		output;
+	end;
+	drop i;
+run;
+
+data i;
+	set i;
 	if "%sysget(d)"d=intnx("mon","%sysget(d)"d,0,"end") then do;
 		p=intnx("month","%sysget(d)"d,-60);
 		q="%sysget(d)"d;
@@ -24,9 +33,7 @@ data i;
 		input d yymmdd10. +1 o h l c a v;
 		output;
 	end;
-cards;
-^gspc ^irx %sysget(t)
-;
+run;
 
 proc sql;
 	create table o as

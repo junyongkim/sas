@@ -1,12 +1,21 @@
 /*-----------------------------------------------------------------------------+
 | yahooann.bat, yahooann.sas                                                   |
 | junyong                                                                      |
-| 201101                                                                       |
+| 211101                                                                       |
 +-----------------------------------------------------------------------------*/
 data i;
-	input @@;
-	_infile_=resolve(_infile_);
-	input t :$16. @@;
+	length t $16;
+	do i=-1 to countw("%sysget(t)"," ");
+		if i=-1 then t="^gspc";
+		else if i=0 then t="^irx";
+		else t=scan("%sysget(t)",i," ");
+		output;
+	end;
+	drop i;
+run;
+
+data i;
+	set i;
 	f=cats("https://query1.finance.yahoo.com/v7/finance/download/",t,
 		"?period1=",dhms("1jan1901"d,0,0,0)-315619200,
 		'&period2=',dhms("31dec2100"d,23,59,59)-315619200,
@@ -22,9 +31,7 @@ data i;
 		end;
 		else input;
 	end;
-cards;
-^gspc ^irx %sysget(t)
-;
+run;
 
 proc sort;
 	by d t;
