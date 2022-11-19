@@ -6,7 +6,7 @@ proc sql;
 		outer union corresponding
 		select intnx("month",input(put(date,6.),yymmn6.),0,"end") as date,
 			rm,ty,pe,vs
-		from bbgbextend(where=(200201<=date<=201912))
+		from bbgbextend(where=(200201<=date<=202112))
 		order by date;
 quit;
 
